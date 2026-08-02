@@ -12,4 +12,5 @@ export const styles = StyleSheet.create({
   lg: { paddingVertical: 14, paddingHorizontal: 20 },
   disabled: { opacity: 0.5 },
   label: { color: "#ffffff", fontWeight: "600" },
+  ghostLabel: { color: "#ff4a15" },
 });

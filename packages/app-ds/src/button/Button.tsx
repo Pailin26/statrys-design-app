@@ -23,7 +23,7 @@ export function Button({
       onPress={onPress}
       disabled={disabled}
     >
-      <Text style={styles.label}>{children}</Text>
+      <Text style={[styles.label, variant === "ghost" && styles.ghostLabel]}>{children}</Text>
     </Pressable>
   );
 }
