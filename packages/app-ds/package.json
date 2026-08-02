@@ -1,0 +1,16 @@
+{
+  "name": "@statrys/app-ds",
+  "version": "0.1.0",
+  "description": "Statrys Core DS for the mobile app — React Native components built on tokens + icons",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.73"
+  },
+  "dependencies": {
+    "@statrys/tokens": "*",
+    "@statrys/icons": "*"
+  }
+}

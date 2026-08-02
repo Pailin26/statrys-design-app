@@ -1,0 +1,15 @@
+{
+  "name": "Button",
+  "platform": "app",
+  "description": "Primary interactive button for the React Native mobile app.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": ["button.primary.bg", "text.primary"],
+  "props": {
+    "variant": ["primary", "secondary", "ghost"],
+    "size": ["sm", "md", "lg"],
+    "disabled": "boolean"
+  },
+  "status": "stable",
+  "usedBy": []
+}
