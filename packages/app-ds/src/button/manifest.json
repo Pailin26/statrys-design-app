@@ -4,9 +4,14 @@
   "description": "Primary interactive button for the React Native mobile app.",
   "figmaFileKey": "",
   "figmaNodeId": "",
-  "consumesTokens": ["button.primary.bg", "text.primary"],
+  "consumesTokens": [
+    "button.primary", "button.primaryActive",
+    "button.secondary", "button.secondaryActive",
+    "button.tertiary", "button.tertiaryActive",
+    "button.disabled", "text.neutralInverse.primary", "text.neutralInverse.disabled"
+  ],
   "props": {
-    "variant": ["primary", "secondary", "ghost"],
+    "variant": ["primary", "secondary", "tertiary"],
     "size": ["sm", "md", "lg"],
     "disabled": "boolean"
   },

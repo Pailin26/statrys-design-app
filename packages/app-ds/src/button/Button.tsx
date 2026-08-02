@@ -1,9 +1,9 @@
 import React from "react";
 import { Pressable, Text, PressableProps } from "react-native";
-import { styles } from "./Button.styles";
+import { styles, containerColors, labelColors } from "./Button.styles";
 
 export type ButtonProps = {
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "tertiary";
   size?: "sm" | "md" | "lg";
   disabled?: boolean;
   children: string;
@@ -17,13 +17,33 @@ export function Button({
   children,
   onPress,
 }: ButtonProps) {
+  const container = containerColors[variant];
+  const label = labelColors[variant];
+
   return (
     <Pressable
-      style={[styles.base, styles[variant], styles[size], disabled && styles.disabled]}
+      style={({ pressed }) => [
+        styles.base,
+        styles[size],
+        container.base,
+        pressed && !disabled && "pressed" in container ? container.pressed : null,
+        disabled ? container.disabled : null,
+      ]}
       onPress={onPress}
       disabled={disabled}
     >
-      <Text style={[styles.label, variant === "ghost" && styles.ghostLabel]}>{children}</Text>
+      {({ pressed }) => (
+        <Text
+          style={[
+            styles.label,
+            { color: label.base },
+            pressed && !disabled && "pressed" in label ? { color: label.pressed } : null,
+            disabled && "disabled" in label ? { color: label.disabled } : null,
+          ]}
+        >
+          {children}
+        </Text>
+      )}
     </Pressable>
   );
 }
