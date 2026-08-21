@@ -1,0 +1,14 @@
+{
+  "name": "EmptyState",
+  "platform": "app",
+  "description": "Full-page illustrated zero-state for the React Native mobile app — icon, title + subtitle stack, then an optional primary CTA.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": ["text.primary", "text.secondary", "font.primary", "fontWeight.medium", "fontWeight.regular", "typography.bodyMd", "fontSize.sm", "space.1", "space.8"],
+  "props": {
+    "title": "string",
+    "subtitle": "string"
+  },
+  "status": "stable",
+  "usedBy": []
+}

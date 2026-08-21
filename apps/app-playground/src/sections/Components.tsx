@@ -37,6 +37,7 @@ import {
   InvoiceRow,
   SegmentedControls,
   ToastMessage,
+  EmptyState,
 } from "@statrys/app-ds";
 
 const VARIANTS = ["primary", "secondary", "tertiary"] as const;
@@ -604,6 +605,20 @@ function ToastMessageDemo() {
   );
 }
 
+function EmptyStateDemo() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>EmptyState</Text>
+      <EmptyState
+        icon={<ArrowUpRight size={32} color="#a0a0a0" />}
+        title="No invoices yet"
+        subtitle="Invoices you send will show up here."
+        action={<Button size="sm">Create invoice</Button>}
+      />
+    </View>
+  );
+}
+
 const DEMOS: Record<string, React.ComponentType> = {
   button: ButtonDemo,
   badge: BadgeDemo,
@@ -640,6 +655,7 @@ const DEMOS: Record<string, React.ComponentType> = {
   "invoice-row": InvoiceRowDemo,
   "segmented-controls": SegmentedControlsDemo,
   "toast-message": ToastMessageDemo,
+  "empty-state": EmptyStateDemo,
 };
 
 export function Components({ item }: { item: string }) {

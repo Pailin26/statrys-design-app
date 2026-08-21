@@ -70,6 +70,8 @@ export { SegmentedControls } from "./segmentedControls/SegmentedControls";
 export type { SegmentedControlsProps } from "./segmentedControls/SegmentedControls";
 export { ToastMessage } from "./toastMessage/ToastMessage";
 export type { ToastMessageProps, ToastVariant } from "./toastMessage/ToastMessage";
+export { EmptyState } from "./emptyState/EmptyState";
+export type { EmptyStateProps } from "./emptyState/EmptyState";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";
