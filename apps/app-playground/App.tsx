@@ -48,7 +48,57 @@ const NAV: Record<Tab, NavGroup[]> = {
       ],
     },
   ],
-  components: [{ group: "Forms and input", items: [{ id: "button", label: "Button" }] }],
+  components: [
+    {
+      group: "Forms and input",
+      items: [
+        { id: "button", label: "Button" },
+        { id: "checkbox", label: "Checkbox" },
+        { id: "toggle", label: "Toggle" },
+        { id: "text-field", label: "TextField" },
+        { id: "text-area", label: "TextArea" },
+        { id: "search", label: "Search" },
+        { id: "number-stepper", label: "NumberStepper" },
+      ],
+    },
+    {
+      group: "Feedback",
+      items: [
+        { id: "badge", label: "Badge" },
+        { id: "noti-badge", label: "NotiBadge" },
+        { id: "banner", label: "Banner" },
+        { id: "tooltip", label: "Tooltip" },
+        { id: "loading", label: "Loading" },
+        { id: "overlay", label: "Overlay" },
+      ],
+    },
+    {
+      group: "Layout",
+      items: [
+        { id: "list-card", label: "ListCard" },
+        { id: "bottom-sheet", label: "BottomSheet" },
+        { id: "page-header", label: "PageHeader" },
+        { id: "segmented-control-base", label: "SegmentedControlBase" },
+      ],
+    },
+    {
+      group: "Actions",
+      items: [
+        { id: "chips", label: "Chips" },
+        { id: "x-close", label: "XClose" },
+        { id: "swipe-actions", label: "SwipeActions" },
+        { id: "fab", label: "FAB" },
+        { id: "action-required", label: "ActionRequired" },
+      ],
+    },
+    {
+      group: "Data display",
+      items: [
+        { id: "avatar", label: "Avatar" },
+        { id: "outstanding-card", label: "OutstandingCard" },
+      ],
+    },
+  ],
 };
 
 function firstItem(tab: Tab): string {
