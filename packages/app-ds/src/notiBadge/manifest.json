@@ -1,0 +1,17 @@
+{
+  "name": "NotiBadge",
+  "platform": "app",
+  "description": "Small unread-count pill meant to overlay a corner of another element (e.g. TabsBase) for the React Native mobile app.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "notiBadge.solidBg", "notiBadge.solidText", "notiBadge.inverseBg", "notiBadge.inverseBorder",
+    "notiBadge.inverseText", "notiBadge.height", "notiBadge.minWidth", "notiBadge.radius", "notiBadge.shadow"
+  ],
+  "props": {
+    "count": "string",
+    "inverse": "boolean"
+  },
+  "status": "stable",
+  "usedBy": []
+}
