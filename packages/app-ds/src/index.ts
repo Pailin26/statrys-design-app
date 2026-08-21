@@ -30,6 +30,8 @@ export { SwipeActions } from "./swipeActions/SwipeActions";
 export type { SwipeActionsProps } from "./swipeActions/SwipeActions";
 export { OutstandingCard } from "./outstandingCard/OutstandingCard";
 export type { OutstandingCardProps } from "./outstandingCard/OutstandingCard";
+export { PageHeader } from "./pageHeader/PageHeader";
+export type { PageHeaderProps, PageHeaderType } from "./pageHeader/PageHeader";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";

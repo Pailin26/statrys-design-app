@@ -49,6 +49,7 @@ export const styles = StyleSheet.create({
     fontWeight: String(FontWeightMedium) as "500",
     fontSize: TypographyCardTitleMdMobile,
     lineHeight: TypographyCardTitleMdMobile * 0.9,
+    letterSpacing: -TypographyCardTitleMdMobile * 0.05,
   },
   // Frosted 36px action button — same recipe as PageHeader's glass button.
   actionButton: {

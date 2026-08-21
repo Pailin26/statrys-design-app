@@ -1,0 +1,26 @@
+{
+  "name": "PageHeader",
+  "platform": "app",
+  "description": "Page header for the React Native mobile app, 4 types: \"left\" (big title, optional collapsed compact row), \"left-on-scroll\" (compact left-aligned title), \"center\" (compact centered title), \"search\" (frosted search pill). Buttons/pill are a flat frosted-tint approximation (no expo-blur dependency yet).",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "alpha.white.40", "shadow.md", "radius.full", "text.primary", "text.onColor", "text.disabled",
+    "text.placeholder", "text.neutralInverse.primary", "button.primary", "field.borderFocus",
+    "field.bgDisabled", "border.error.bold", "font.primary", "fontWeight.medium", "fontWeight.regular",
+    "typography.cardTitleLgMobile", "typography.cardTitleMdMobile", "typography.bodyMd", "fontSize.sm",
+    "space.1", "space.4", "space.6", "space.8", "space.24"
+  ],
+  "props": {
+    "type": ["left", "left-on-scroll", "center", "search"],
+    "showBack": "boolean",
+    "showSearch": "boolean",
+    "collapsed": "boolean",
+    "onColor": "boolean",
+    "error": "boolean",
+    "disabled": "boolean"
+  },
+  "status": "stable",
+  "usedBy": [],
+  "notes": "Web's collapse/type-change transitions (Framer Motion layout + crossfade) are dropped for a plain conditional render — no react-native-reanimated dependency for this. Glass buttons/pill approximate the backdrop blur with a flat AlphaWhite40 tint (no expo-blur dependency)."
+}
