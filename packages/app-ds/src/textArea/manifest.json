@@ -1,0 +1,22 @@
+{
+  "name": "TextArea",
+  "platform": "app",
+  "description": "Multi-line input for the React Native mobile app. Optional label/caption wrapper, matching TextField's convention exactly.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "field.bg", "field.border", "field.borderFocus", "field.bgDisabled", "border.error.bold", "bg.error.subtle",
+    "text.primary", "text.placeholder", "text.secondary", "text.disabled", "text.error.primary", "radius.xl",
+    "font.primary", "fontWeight.regular", "fontWeight.medium", "fontSize.sm", "fontSize.xs", "fontSize.base",
+    "borderWidth.base", "space.2", "space.6", "space.8"
+  ],
+  "props": {
+    "rows": "number",
+    "disabled": "boolean",
+    "error": "boolean",
+    "mandatory": "boolean"
+  },
+  "status": "stable",
+  "usedBy": [],
+  "notes": "`rows` is approximated as a minHeight (line-height × rows + padding) since RN's multiline TextInput has no direct row-count sizing on iOS."
+}

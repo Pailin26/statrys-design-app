@@ -40,6 +40,8 @@ export { TextField } from "./textField/TextField";
 export type { TextFieldProps, TextFieldType } from "./textField/TextField";
 export { Chevron as TextFieldChevron, CalendarIcon as TextFieldCalendarIcon } from "./textField/icons";
 export { USFlag } from "./textField/USFlag";
+export { TextArea } from "./textArea/TextArea";
+export type { TextAreaProps } from "./textArea/TextArea";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";
