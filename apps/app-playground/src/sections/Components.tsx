@@ -32,6 +32,7 @@ import {
   FileItemBase,
   NotificationItem,
   ListText,
+  ListRow,
 } from "@statrys/app-ds";
 
 const VARIANTS = ["primary", "secondary", "tertiary"] as const;
@@ -519,6 +520,25 @@ function ListTextDemo() {
   );
 }
 
+function ListRowDemo() {
+  const [selected, setSelected] = useState(true);
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>ListRow</Text>
+      <ListCard>
+        <ListRow label="Account holder" value="Olivia Rhye" trailing="chevron" onPress={() => {}} />
+        <ListRow label="Currency" description="Settlement currency" value="USD" trailing="chevron" onPress={() => {}} />
+        <ListRow label="Enable notifications" trailing="toggle" selected={selected} onSelectedChange={setSelected} />
+        <ListRow label="Issue date" placeholder value="Select a date" caption="Required" error last />
+      </ListCard>
+      <Text style={styles.subtitle2}>swiped=true</Text>
+      <ListCard>
+        <ListRow label="Draft invoice" value="HKD 500.00" swiped onDelete={() => {}} onMore={() => {}} last />
+      </ListCard>
+    </View>
+  );
+}
+
 const DEMOS: Record<string, React.ComponentType> = {
   button: ButtonDemo,
   badge: BadgeDemo,
@@ -550,6 +570,7 @@ const DEMOS: Record<string, React.ComponentType> = {
   "file-item-base": FileItemBaseDemo,
   "notification-item": NotificationItemDemo,
   "list-text": ListTextDemo,
+  "list-row": ListRowDemo,
 };
 
 export function Components({ item }: { item: string }) {

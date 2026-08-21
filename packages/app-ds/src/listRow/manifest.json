@@ -1,0 +1,22 @@
+{
+  "name": "ListRow",
+  "platform": "app",
+  "description": "List row for use inside ListCard, for the React Native mobile app — label (+ optional description), a value/chevron/toggle trailing edge, optional caption, and a swipe-revealed delete/more state.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "border.neutral.primary", "bg.neutral.primaryHover", "text.primary", "text.secondary",
+    "text.error.primary", "icon.secondary", "font.primary", "fontWeight.regular", "fontWeight.medium",
+    "fontSize.sm", "fontSize.xs", "borderWidth.base", "space.1", "space.2", "space.3", "space.4", "space.6"
+  ],
+  "props": {
+    "trailing": ["none", "chevron", "toggle"],
+    "error": "boolean",
+    "warning": "boolean",
+    "placeholder": "boolean",
+    "last": "boolean",
+    "swiped": "boolean"
+  },
+  "status": "stable",
+  "usedBy": []
+}

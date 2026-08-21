@@ -60,6 +60,8 @@ export { NotificationItem } from "./notificationItem/NotificationItem";
 export type { NotificationItemProps } from "./notificationItem/NotificationItem";
 export { ListText } from "./listText/ListText";
 export type { ListTextProps } from "./listText/ListText";
+export { ListRow } from "./listRow/ListRow";
+export type { ListRowProps, ListRowTrailing } from "./listRow/ListRow";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";
