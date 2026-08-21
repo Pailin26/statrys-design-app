@@ -12,6 +12,7 @@ import {
   ButtonTextOnFillDisabled,
   ButtonRadius,
   ButtonRadiusFull,
+  ButtonBorderWidth,
   ButtonFontFamily,
   ButtonFontWeight,
   ButtonFontSizeSm,
@@ -51,7 +52,7 @@ import { nativeFontFamily } from "../nativeFont";
 // (unlike CSS on web) — layout (padding/height) goes on the container,
 // fontSize goes on the Text, so they're kept as separate style groups below.
 export const styles = StyleSheet.create({
-  base: { borderRadius: ButtonRadius, alignItems: "center", justifyContent: "center", borderWidth: 1 },
+  base: { borderRadius: ButtonRadius, alignItems: "center", justifyContent: "center", borderWidth: ButtonBorderWidth },
   containerSm: { paddingVertical: ButtonPaddingVerticalSm, paddingHorizontal: ButtonPaddingHorizontalSm, height: ButtonHeightSm },
   containerMd: { paddingVertical: ButtonPaddingVerticalMd, paddingHorizontal: ButtonPaddingHorizontalMd, minHeight: ButtonMinHeightMd },
   containerLg: { paddingVertical: ButtonPaddingVerticalLg, paddingHorizontal: ButtonPaddingHorizontalLg, minHeight: ButtonMinHeightLg },
