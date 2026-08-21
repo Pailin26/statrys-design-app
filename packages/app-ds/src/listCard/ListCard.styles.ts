@@ -1,22 +1,16 @@
 import { StyleSheet } from "react-native";
-import {
-  ListCardBackground,
-  ListCardBorderColor,
-  ListCardBorderWidth,
-  ListCardRadius,
-  ListCardPaddingHorizontal,
-} from "@statrys/tokens";
+import { BgNeutralPrimary, BorderNeutralPrimary, BorderWidthBase, Radius2xl, Space8 } from "@statrys/tokens";
 
-// Every value here comes from semantic/listCard.json.
+// Every value here is an existing shared token — no semantic/listCard.json.
 export const styles = StyleSheet.create({
   card: {
     width: "100%",
     overflow: "hidden",
-    borderRadius: ListCardRadius,
-    backgroundColor: ListCardBackground,
-    borderWidth: ListCardBorderWidth,
-    borderColor: ListCardBorderColor,
-    paddingHorizontal: ListCardPaddingHorizontal,
+    borderRadius: Radius2xl,
+    backgroundColor: BgNeutralPrimary,
+    borderWidth: BorderWidthBase,
+    borderColor: BorderNeutralPrimary,
+    paddingHorizontal: Space8,
   },
   gray: { borderColor: "transparent" },
 });

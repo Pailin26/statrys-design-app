@@ -5,8 +5,9 @@
   "figmaFileKey": "",
   "figmaNodeId": "",
   "consumesTokens": [
-    "notiBadge.solidBg", "notiBadge.solidText", "notiBadge.inverseBg", "notiBadge.inverseBorder",
-    "notiBadge.inverseText", "notiBadge.height", "notiBadge.minWidth", "notiBadge.radius", "notiBadge.shadow"
+    "bg.brand.primary", "text.onColor", "bg.neutral.primary", "border.brand.primary", "text.brand",
+    "space.7", "space.1", "space.2", "borderWidth.base", "radius.full", "font.primary",
+    "fontWeight.medium", "fontSize.xs", "shadow.sm"
   ],
   "props": {
     "count": "string",
