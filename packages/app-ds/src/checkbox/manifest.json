@@ -1,0 +1,22 @@
+{
+  "name": "Checkbox",
+  "platform": "app",
+  "description": "Checkbox control with label + optional description, for the React Native mobile app. Matches web-ds's Checkbox prop shape (no separate exported base-glyph component).",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "checkbox.wrapperSizeSm", "checkbox.wrapperSizeMd", "checkbox.boxSizeSm", "checkbox.boxSizeMd",
+    "checkbox.radiusSm", "checkbox.radiusMd", "checkbox.selectedBorderWidthMd",
+    "borderWidth.sm", "borderWidth.md", "icon.secondary", "icon.brand", "icon.disabled",
+    "bg.neutral.disabled", "bg.neutral.primary", "text.primary", "text.secondary",
+    "font.primary", "fontWeight.regular", "fontSize.sm", "fontSize.xs", "space.4"
+  ],
+  "props": {
+    "size": ["sm", "md"],
+    "selected": "boolean",
+    "indeterminate": "boolean",
+    "disabled": "boolean"
+  },
+  "status": "stable",
+  "usedBy": []
+}

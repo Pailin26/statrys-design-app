@@ -22,6 +22,8 @@ export { Banner } from "./banner/Banner";
 export type { BannerProps, BannerColor } from "./banner/Banner";
 export { BottomSheet } from "./bottomSheet/BottomSheet";
 export type { BottomSheetProps } from "./bottomSheet/BottomSheet";
+export { Checkbox } from "./checkbox/Checkbox";
+export type { CheckboxProps } from "./checkbox/Checkbox";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";
