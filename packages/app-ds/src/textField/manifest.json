@@ -1,0 +1,24 @@
+{
+  "name": "TextField",
+  "platform": "app",
+  "description": "Input field for the React Native mobile app, 7 types: text, left-icon, dropdown, date-picker, mobile, currency, unit. Optional label/caption wrapper. Not the same shape as web-ds's TextInputFluid (a different, floating-label pattern) — ported from accounting's discrete-type TextField instead.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "field.bg", "field.border", "field.borderFocus", "field.bgDisabled", "border.error.bold", "bg.error.subtle",
+    "border.warning.bold", "text.primary", "text.placeholder", "text.secondary", "text.disabled",
+    "text.error.primary", "text.warning.primary", "radius.xl", "font.primary", "fontWeight.regular",
+    "fontWeight.medium", "fontSize.sm", "fontSize.xs", "fontSize.base", "borderWidth.base",
+    "space.2", "space.4", "space.8", "space.24"
+  ],
+  "props": {
+    "type": ["text", "left-icon", "dropdown", "date-picker", "mobile", "currency", "unit"],
+    "disabled": "boolean",
+    "error": "boolean",
+    "highlight": "boolean",
+    "mandatory": "boolean"
+  },
+  "status": "stable",
+  "usedBy": [],
+  "notes": "Web's :focus-within border is tracked via local onFocus/onBlur state. inputMode/pattern/dataReq (web-only concepts) dropped; inputType maps to RN's keyboardType/secureTextEntry instead."
+}
