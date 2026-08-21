@@ -4,6 +4,7 @@
   "description": "Dev-only Expo app for browsing Foundation + app-ds on a simulator/device/web. Not published, not a product prototype — see docs/contributing.md for that boundary.",
   "main": "index.ts",
   "dependencies": {
+    "@statrys/tokens": "github:Pailin26/statrys-tokens",
     "@expo/metro-runtime": "~57.0.8",
     "expo": "~57.0.9",
     "expo-font": "~57.0.1",

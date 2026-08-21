@@ -13,9 +13,9 @@ import { useFonts } from "expo-font";
 // only ever had the web .woff2 build.
 export function useAppFonts() {
   return useFonts({
-    "GTWalsheimLC-Regular": require("../../../packages/tokens/fonts/GTWalsheimLC-Regular.ttf"),
-    "GTWalsheimLC-Medium": require("../../../packages/tokens/fonts/GTWalsheimLC-Medium.ttf"),
-    "GTWalsheimLC-Bold": require("../../../packages/tokens/fonts/GTWalsheimLC-Bold.ttf"),
-    "GTWalsheimLC-Black": require("../../../packages/tokens/fonts/GTWalsheimLC-Black.ttf"),
+    "GTWalsheimLC-Regular": require("@statrys/tokens/fonts/GTWalsheimLC-Regular.ttf"),
+    "GTWalsheimLC-Medium": require("@statrys/tokens/fonts/GTWalsheimLC-Medium.ttf"),
+    "GTWalsheimLC-Bold": require("@statrys/tokens/fonts/GTWalsheimLC-Bold.ttf"),
+    "GTWalsheimLC-Black": require("@statrys/tokens/fonts/GTWalsheimLC-Black.ttf"),
   });
 }
