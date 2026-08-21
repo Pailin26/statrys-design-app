@@ -26,6 +26,7 @@ import {
   Search,
   ActionRequired,
   FAB,
+  InvoiceStatus,
 } from "@statrys/app-ds";
 
 const VARIANTS = ["primary", "secondary", "tertiary"] as const;
@@ -417,6 +418,18 @@ function FABDemo() {
   );
 }
 
+function InvoiceStatusDemo() {
+  const colors = ["neutral", "success", "warning", "error", "info", "custom"] as const;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>InvoiceStatus</Text>
+      {colors.map((color) => (
+        <InvoiceStatus key={color} label={color} color={color} caption="12 Jun 2026" />
+      ))}
+    </View>
+  );
+}
+
 const DEMOS: Record<string, React.ComponentType> = {
   button: ButtonDemo,
   badge: BadgeDemo,
@@ -442,6 +455,7 @@ const DEMOS: Record<string, React.ComponentType> = {
   search: SearchDemo,
   "action-required": ActionRequiredDemo,
   fab: FABDemo,
+  "invoice-status": InvoiceStatusDemo,
 };
 
 export function Components({ item }: { item: string }) {

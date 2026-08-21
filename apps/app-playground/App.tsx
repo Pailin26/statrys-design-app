@@ -96,6 +96,7 @@ const NAV: Record<Tab, NavGroup[]> = {
       items: [
         { id: "avatar", label: "Avatar" },
         { id: "outstanding-card", label: "OutstandingCard" },
+        { id: "invoice-status", label: "InvoiceStatus" },
       ],
     },
   ],

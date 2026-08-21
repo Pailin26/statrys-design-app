@@ -48,6 +48,8 @@ export { ActionRequired } from "./actionRequired/ActionRequired";
 export type { ActionRequiredProps } from "./actionRequired/ActionRequired";
 export { FAB } from "./fab/FAB";
 export type { FABProps, FABHierarchy } from "./fab/FAB";
+export { InvoiceStatus } from "./invoiceStatus/InvoiceStatus";
+export type { InvoiceStatusProps } from "./invoiceStatus/InvoiceStatus";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";

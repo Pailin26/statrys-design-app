@@ -1,0 +1,13 @@
+{
+  "name": "InvoiceStatus",
+  "platform": "app",
+  "description": "Colored status label + muted caption (usually a date), space-between across the full width, for the React Native mobile app.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": ["text.secondary", "text.success.primary", "text.warning.primary", "text.error.primary", "text.info.primary", "text.brand", "font.primary", "fontWeight.regular", "fontSize.xs", "space.1"],
+  "props": {
+    "color": ["neutral", "success", "warning", "error", "info", "custom"]
+  },
+  "status": "stable",
+  "usedBy": []
+}
