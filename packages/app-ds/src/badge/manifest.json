@@ -1,0 +1,21 @@
+{
+  "name": "Badge",
+  "platform": "app",
+  "description": "Non-interactive status label for the React Native mobile app.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "badge.textNeutral", "badge.textSuccess", "badge.textWarning", "badge.textError", "badge.textInfo",
+    "badge.boldBgNeutral", "badge.boldBgSuccess", "badge.boldBgWarning", "badge.boldBgError", "badge.boldBgInfo",
+    "badge.boldTextNeutral", "badge.boldTextSuccess", "badge.boldTextWarning", "badge.boldTextError", "badge.boldTextInfo",
+    "badge.subtleBg", "badge.subtleBorder", "badge.radius", "badge.gap"
+  ],
+  "props": {
+    "size": ["sm", "md", "lg"],
+    "variant": ["subtle", "bold", "text"],
+    "color": ["neutral", "success", "warning", "error", "info", "custom"]
+  },
+  "status": "stable",
+  "usedBy": [],
+  "notes": "color=\"custom\" uses a solid-color approximation of gradient.badgeCustom on native (no expo-linear-gradient/masked-view dependency yet) — see badge.customApproxBg/customApproxText in semantic/badge.json. Add real gradient rendering if a product surface needs the exact look."
+}
