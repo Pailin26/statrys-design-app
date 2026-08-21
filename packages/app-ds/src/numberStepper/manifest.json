@@ -1,0 +1,20 @@
+{
+  "name": "NumberStepper",
+  "platform": "app",
+  "description": "Bordered \"− value +\" control for adjusting a small integer amount in place, for the React Native mobile app. Not a Figma DS component yet — built to the same field tokens as TextField so it reads as part of the same family.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "field.bg", "field.bgDisabled", "field.border", "radius.xl", "text.primary", "text.disabled",
+    "font.primary", "fontWeight.medium", "fontSize.sm", "borderWidth.base", "space.16", "space.24"
+  ],
+  "props": {
+    "value": "number",
+    "min": "number",
+    "max": "number",
+    "step": "number",
+    "disabled": "boolean"
+  },
+  "status": "stable",
+  "usedBy": []
+}

@@ -24,6 +24,8 @@ export { BottomSheet } from "./bottomSheet/BottomSheet";
 export type { BottomSheetProps } from "./bottomSheet/BottomSheet";
 export { Checkbox } from "./checkbox/Checkbox";
 export type { CheckboxProps } from "./checkbox/Checkbox";
+export { NumberStepper } from "./numberStepper/NumberStepper";
+export type { NumberStepperProps } from "./numberStepper/NumberStepper";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";
