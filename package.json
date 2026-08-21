@@ -1,0 +1,15 @@
+{
+  "name": "statrys-design-app",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Statrys Core DS for the mobile app (@statrys/app-ds) + app playground",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm --prefix apps/app-playground run web",
+    "lint:tokens": "node scripts/lint-hardcoded-values.js",
+    "generate:manifests": "node scripts/generate-manifest.js"
+  },
+  "license": "UNLICENSED"
+}
