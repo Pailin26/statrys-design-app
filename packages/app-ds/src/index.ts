@@ -12,6 +12,8 @@ export { Overlay } from "./overlay/Overlay";
 export type { OverlayProps } from "./overlay/Overlay";
 export { ListCard } from "./listCard/ListCard";
 export type { ListCardProps } from "./listCard/ListCard";
+export { Chips } from "./chips/Chips";
+export type { ChipsProps, ChipsType } from "./chips/Chips";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";

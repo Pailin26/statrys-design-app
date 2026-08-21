@@ -1,0 +1,18 @@
+{
+  "name": "Chips",
+  "platform": "app",
+  "description": "Pill control for the React Native mobile app — \"filter\" (toggleable) or \"input\" (removable value pill).",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "button.secondary", "button.paddingHorizontalSm", "border.neutral.primary", "radius.md",
+    "bg.neutral.primary", "bg.neutral.primaryHover", "border.beige.primaryHover", "text.secondary",
+    "space.2", "font.primary", "fontWeight.medium", "fontSize.sm"
+  ],
+  "props": {
+    "type": ["filter", "input"],
+    "active": "boolean"
+  },
+  "status": "stable",
+  "usedBy": []
+}
