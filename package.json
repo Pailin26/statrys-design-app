@@ -11,5 +11,8 @@
     "lint:tokens": "node scripts/lint-hardcoded-values.js",
     "generate:manifests": "node scripts/generate-manifest.js"
   },
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@statrys/tokens": "github:Pailin26/statrys-tokens"
+  }
 }
