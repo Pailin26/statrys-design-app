@@ -1,0 +1,14 @@
+{
+  "name": "SegmentedControlBase",
+  "platform": "app",
+  "description": "Single tappable segment/pill for the React Native mobile app — white + shadow when active, transparent + secondary text otherwise. Compose several via SegmentedControls.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": ["text.secondary", "text.primary", "bg.neutral.primary", "radius.lg", "font.primary", "fontWeight.medium", "fontSize.xs", "space.2", "space.4", "space.6"],
+  "props": {
+    "active": "boolean"
+  },
+  "status": "stable",
+  "usedBy": [],
+  "notes": "Web slides the active pill between segments via a shared framer-motion layoutId; ported as a static View with no slide animation (no react-native-reanimated dependency)."
+}

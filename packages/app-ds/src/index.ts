@@ -32,6 +32,8 @@ export { OutstandingCard } from "./outstandingCard/OutstandingCard";
 export type { OutstandingCardProps } from "./outstandingCard/OutstandingCard";
 export { PageHeader } from "./pageHeader/PageHeader";
 export type { PageHeaderProps, PageHeaderType } from "./pageHeader/PageHeader";
+export { SegmentedControlBase } from "./segmentedControlBase/SegmentedControlBase";
+export type { SegmentedControlBaseProps } from "./segmentedControlBase/SegmentedControlBase";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";
