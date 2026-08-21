@@ -1,46 +1,46 @@
 import { StyleSheet } from "react-native";
 import {
-  ButtonSecondary,
-  ButtonPaddingHorizontalSm,
-  BorderNeutralPrimary,
-  RadiusMd,
-  BgNeutralPrimary,
-  BgNeutralPrimaryHover,
-  BorderBeigePrimaryHover,
-  TextSecondary,
-  Space2,
-  FontPrimary,
-  FontWeightMedium,
-  FontSizeSm,
+  ChipsText,
+  ChipsActiveBorder,
+  ChipsBorder,
+  ChipsRadius,
+  ChipsPaddingHorizontal,
+  ChipsHeight,
+  ChipsInputBg,
+  ChipsInputPressedBg,
+  ChipsInputPressedBorder,
+  ChipsGap,
+  ChipsDismissIconColor,
+  ChipsDismissSize,
+  ChipsFontFamily,
+  ChipsFontWeight,
+  ChipsFontSize,
 } from "@statrys/tokens";
 import { nativeFontFamily } from "../nativeFont";
 
-// Every value here is an existing shared token — no semantic/chips.json.
-// Fixed 30px height / 16px dismiss hit target have no matching token
-// (nothing in the space scale lands on 30 or 16-as-a-square-icon-box), so
-// they're plain literals.
+// Every value here comes from semantic/chips.json.
 export const styles = StyleSheet.create({
   chip: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    height: 30,
-    paddingHorizontal: ButtonPaddingHorizontalSm,
+    height: ChipsHeight,
+    paddingHorizontal: ChipsPaddingHorizontal,
     borderWidth: 1,
-    borderColor: BorderNeutralPrimary,
-    borderRadius: RadiusMd,
+    borderColor: ChipsBorder,
+    borderRadius: ChipsRadius,
     backgroundColor: "transparent",
   },
-  active: { borderColor: ButtonSecondary },
-  input: { gap: Space2, backgroundColor: BgNeutralPrimary },
-  inputPressed: { backgroundColor: BgNeutralPrimaryHover, borderColor: BorderBeigePrimaryHover },
+  active: { borderColor: ChipsActiveBorder },
+  input: { gap: ChipsGap, backgroundColor: ChipsInputBg },
+  inputPressed: { backgroundColor: ChipsInputPressedBg, borderColor: ChipsInputPressedBorder },
   label: {
-    color: ButtonSecondary,
-    fontFamily: nativeFontFamily(FontPrimary, FontWeightMedium),
-    fontWeight: String(FontWeightMedium) as "500",
-    fontSize: FontSizeSm,
+    color: ChipsText,
+    fontFamily: nativeFontFamily(ChipsFontFamily, ChipsFontWeight),
+    fontWeight: String(ChipsFontWeight) as "500",
+    fontSize: ChipsFontSize,
   },
-  dismiss: { width: 16, height: 16, alignItems: "center", justifyContent: "center" },
+  dismiss: { width: ChipsDismissSize, height: ChipsDismissSize, alignItems: "center", justifyContent: "center" },
 });
 
-export const dismissIconColor = TextSecondary;
+export const dismissIconColor = ChipsDismissIconColor;

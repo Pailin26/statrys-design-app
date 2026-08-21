@@ -4,7 +4,12 @@
   "description": "Spinner for the React Native mobile app — a parametric SVG ring (grey track + gradient arc) with an optional centered Statrys mark, sizes 2xs–lg.",
   "figmaFileKey": "",
   "figmaNodeId": "",
-  "consumesTokens": ["neutral.3", "brand.5", "text.primary"],
+  "consumesTokens": [
+    "loading.trackColor", "loading.gradientStart", "loading.gradientMid", "loading.gradientEnd", "loading.logoColor",
+    "loading.box2xs", "loading.r2xs", "loading.stroke2xs", "loading.boxXs", "loading.rXs", "loading.strokeXs",
+    "loading.boxSm", "loading.rSm", "loading.strokeSm", "loading.boxMd", "loading.rMd", "loading.strokeMd",
+    "loading.boxLg", "loading.rLg", "loading.strokeLg"
+  ],
   "props": {
     "size": ["2xs", "xs", "sm", "md", "lg"]
   },

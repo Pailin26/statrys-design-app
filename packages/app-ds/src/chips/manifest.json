@@ -5,9 +5,9 @@
   "figmaFileKey": "",
   "figmaNodeId": "",
   "consumesTokens": [
-    "button.secondary", "button.paddingHorizontalSm", "border.neutral.primary", "radius.md",
-    "bg.neutral.primary", "bg.neutral.primaryHover", "border.beige.primaryHover", "text.secondary",
-    "space.2", "font.primary", "fontWeight.medium", "fontSize.sm"
+    "chips.text", "chips.activeBorder", "chips.border", "chips.radius", "chips.paddingHorizontal",
+    "chips.height", "chips.inputBg", "chips.inputPressedBg", "chips.inputPressedBorder", "chips.gap",
+    "chips.dismissIconColor", "chips.dismissSize", "chips.fontFamily", "chips.fontWeight", "chips.fontSize"
   ],
   "props": {
     "type": ["filter", "input"],
