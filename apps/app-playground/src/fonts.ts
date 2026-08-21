@@ -6,15 +6,16 @@ import { useFonts } from "expo-font";
 // nativeFont.ts, which maps the token system's bare family+weight to these
 // exact names — keep the two in sync).
 //
-// This only makes the font render on the *web* target: woff2 becomes a real
-// @font-face there. On true native (iOS/Android) it still won't, since
-// accounting only ships a woff2 (web) build of this font — RN itself has no
-// woff2 decoder, a genuine .ttf/.otf would be needed.
+// Uses .ttf, not .woff2 — RN has no woff2 decoder on true native
+// (iOS/Android), only on the web target (react-native-web, where it just
+// becomes a real @font-face). .ttf works on both. Sourced from Statrys' own
+// GT Walsheim LC license (order_120580), not from accounting's repo, which
+// only ever had the web .woff2 build.
 export function useAppFonts() {
   return useFonts({
-    "GTWalsheimLC-Regular": require("../../../packages/tokens/fonts/GTWalsheimLC-Regular.woff2"),
-    "GTWalsheimLC-Medium": require("../../../packages/tokens/fonts/GTWalsheimLC-Medium.woff2"),
-    "GTWalsheimLC-Bold": require("../../../packages/tokens/fonts/GTWalsheimLC-Bold.woff2"),
-    "GTWalsheimLC-Black": require("../../../packages/tokens/fonts/GTWalsheimLC-Black.woff2"),
+    "GTWalsheimLC-Regular": require("../../../packages/tokens/fonts/GTWalsheimLC-Regular.ttf"),
+    "GTWalsheimLC-Medium": require("../../../packages/tokens/fonts/GTWalsheimLC-Medium.ttf"),
+    "GTWalsheimLC-Bold": require("../../../packages/tokens/fonts/GTWalsheimLC-Bold.ttf"),
+    "GTWalsheimLC-Black": require("../../../packages/tokens/fonts/GTWalsheimLC-Black.ttf"),
   });
 }
