@@ -27,6 +27,7 @@ import {
   ActionRequired,
   FAB,
   InvoiceStatus,
+  TabsBase,
 } from "@statrys/app-ds";
 
 const VARIANTS = ["primary", "secondary", "tertiary"] as const;
@@ -430,6 +431,28 @@ function InvoiceStatusDemo() {
   );
 }
 
+function TabsBaseDemo() {
+  const [active, setActive] = useState(0);
+  const labels = ["All", "Paid", "Overdue"];
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>TabsBase</Text>
+      <Text style={styles.subtitle2}>variant=&quot;button&quot;</Text>
+      <View style={styles.row}>
+        {labels.map((label, i) => (
+          <TabsBase key={label} label={label} variant="button" active={active === i} onPress={() => setActive(i)} unread={i === 2 ? "3" : undefined} />
+        ))}
+      </View>
+      <Text style={styles.subtitle2}>variant=&quot;underline&quot;</Text>
+      <View style={styles.row}>
+        {labels.map((label, i) => (
+          <TabsBase key={label} label={label} variant="underline" active={active === i} onPress={() => setActive(i)} />
+        ))}
+      </View>
+    </View>
+  );
+}
+
 const DEMOS: Record<string, React.ComponentType> = {
   button: ButtonDemo,
   badge: BadgeDemo,
@@ -456,6 +479,7 @@ const DEMOS: Record<string, React.ComponentType> = {
   "action-required": ActionRequiredDemo,
   fab: FABDemo,
   "invoice-status": InvoiceStatusDemo,
+  "tabs-base": TabsBaseDemo,
 };
 
 export function Components({ item }: { item: string }) {
