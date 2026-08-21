@@ -35,6 +35,8 @@ import {
   ListRow,
   HorizontalTabs,
   InvoiceRow,
+  SegmentedControls,
+  ToastMessage,
 } from "@statrys/app-ds";
 
 const VARIANTS = ["primary", "secondary", "tertiary"] as const;
@@ -576,6 +578,32 @@ function InvoiceRowDemo() {
   );
 }
 
+function SegmentedControlsDemo() {
+  const [active, setActive] = useState(0);
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>SegmentedControls</Text>
+      <View style={{ width: 300 }}>
+        <SegmentedControls segments={["Day", "Week", "Month", "Year"]} activeIndex={active} onChange={setActive} />
+      </View>
+    </View>
+  );
+}
+
+function ToastMessageDemo() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>ToastMessage</Text>
+      <View style={{ gap: 8 }}>
+        <ToastMessage title="Saved" onClose={() => {}} />
+        <ToastMessage variant="success" title="Invoice sent" subtitle="Marked as sent" action={{ label: "View Details", onPress: () => {} }} onClose={() => {}} />
+        <ToastMessage variant="error" title="Upload failed" onClose={() => {}} />
+        <ToastMessage variant="warning" title="Missing details" onClose={() => {}} />
+      </View>
+    </View>
+  );
+}
+
 const DEMOS: Record<string, React.ComponentType> = {
   button: ButtonDemo,
   badge: BadgeDemo,
@@ -610,6 +638,8 @@ const DEMOS: Record<string, React.ComponentType> = {
   "list-row": ListRowDemo,
   "horizontal-tabs": HorizontalTabsDemo,
   "invoice-row": InvoiceRowDemo,
+  "segmented-controls": SegmentedControlsDemo,
+  "toast-message": ToastMessageDemo,
 };
 
 export function Components({ item }: { item: string }) {

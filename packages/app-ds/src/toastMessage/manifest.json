@@ -1,0 +1,17 @@
+{
+  "name": "ToastMessage",
+  "platform": "app",
+  "description": "Dark toast card for the React Native mobile app — optional filled status icon, title + subtitle, optional \"View Details\" link, and a close button. Purely presentational — no positioning, timer, or animation.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "bg.neutralInverse.primary", "text.neutralInverse.primary", "link.inverse", "icon.success.primary",
+    "icon.error.primary", "icon.warning.primary", "radius.xl", "font.primary", "fontWeight.medium",
+    "fontWeight.regular", "fontSize.sm", "space.1", "space.2", "space.4", "space.6", "space.8"
+  ],
+  "props": {
+    "variant": ["default", "success", "error", "warning"]
+  },
+  "status": "stable",
+  "usedBy": []
+}

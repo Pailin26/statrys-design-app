@@ -1,0 +1,14 @@
+{
+  "name": "SegmentedControls",
+  "platform": "app",
+  "description": "Beige track of 2-4 SegmentedControlBase segments for the React Native mobile app, with hairline separators between adjacent inactive segments.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": ["bg.beige.secondary", "border.neutral.primary", "radius.xl", "space.1"],
+  "props": {
+    "segments": "string[]",
+    "activeIndex": "number"
+  },
+  "status": "stable",
+  "usedBy": []
+}
