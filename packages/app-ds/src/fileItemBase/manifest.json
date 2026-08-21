@@ -1,0 +1,23 @@
+{
+  "name": "FileItemBase",
+  "platform": "app",
+  "description": "File-attachment row for the React Native mobile app — file icon with a format tag, name + size, in completed/loading/error state, with a delete/replace/download trailing action.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "bg.neutral.primary", "border.neutral.primary", "border.error.bold", "bg.neutral.secondary",
+    "text.primary", "text.secondary", "link.primary", "icon.secondary", "button.primary",
+    "radius.md", "radius.2xl", "borderWidth.base", "font.primary", "fontWeight.regular",
+    "fontWeight.medium", "fontWeight.bold", "fontSize.sm", "fontSize.xs", "space.1", "space.3",
+    "space.4", "space.5", "space.6", "space.8"
+  ],
+  "props": {
+    "state": ["completed", "loading", "error"],
+    "action": ["delete", "replace", "download", "none"],
+    "progress": "number",
+    "downloading": "boolean"
+  },
+  "status": "stable",
+  "usedBy": [],
+  "notes": "Web's shimmer sweep through the progress fill (looping CSS animation) is dropped — keeps the functional width-based fill only, no react-native-reanimated dependency."
+}

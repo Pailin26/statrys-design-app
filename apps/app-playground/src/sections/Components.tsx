@@ -29,6 +29,7 @@ import {
   InvoiceStatus,
   TabsBase,
   Tile,
+  FileItemBase,
 } from "@statrys/app-ds";
 
 const VARIANTS = ["primary", "secondary", "tertiary"] as const;
@@ -468,6 +469,21 @@ function TileDemo() {
   );
 }
 
+function FileItemBaseDemo() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>FileItemBase</Text>
+      <View style={{ gap: 8, width: 320 }}>
+        <FileItemBase name="Invoice-0142.pdf" size="200 KB" />
+        <FileItemBase name="Receipt.pdf" state="loading" progress={64} />
+        <FileItemBase name="Scan.pdf" state="error" />
+        <FileItemBase name="Statement.pdf" action="download" />
+        <FileItemBase name="Contract.pdf" action="replace" />
+      </View>
+    </View>
+  );
+}
+
 const DEMOS: Record<string, React.ComponentType> = {
   button: ButtonDemo,
   badge: BadgeDemo,
@@ -496,6 +512,7 @@ const DEMOS: Record<string, React.ComponentType> = {
   "invoice-status": InvoiceStatusDemo,
   "tabs-base": TabsBaseDemo,
   tile: TileDemo,
+  "file-item-base": FileItemBaseDemo,
 };
 
 export function Components({ item }: { item: string }) {

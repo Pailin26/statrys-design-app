@@ -81,6 +81,7 @@ const NAV: Record<Tab, NavGroup[]> = {
         { id: "segmented-control-base", label: "SegmentedControlBase" },
         { id: "tabs-base", label: "TabsBase" },
         { id: "tile", label: "Tile" },
+        { id: "file-item-base", label: "FileItemBase" },
       ],
     },
     {
