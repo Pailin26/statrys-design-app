@@ -1,0 +1,23 @@
+{
+  "name": "Avatar",
+  "platform": "app",
+  "description": "Square initials chip or circular photo avatar, 7 sizes, for the React Native mobile app.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "avatar.squareBg", "avatar.initialsColor", "avatar.fontFamily", "avatar.fontWeight",
+    "avatar.boxXs", "avatar.radiusXs", "avatar.fontSizeXs", "avatar.letterSpacingXs",
+    "avatar.boxSm", "avatar.radiusSm", "avatar.fontSizeSm", "avatar.letterSpacingSm",
+    "avatar.boxMd", "avatar.radiusMd", "avatar.fontSizeMd", "avatar.letterSpacingMd",
+    "avatar.boxLg", "avatar.radiusLg", "avatar.fontSizeLg", "avatar.letterSpacingLg",
+    "avatar.boxXl", "avatar.radiusXl", "avatar.fontSizeXl", "avatar.letterSpacingXl",
+    "avatar.box2xl", "avatar.radius2xl", "avatar.fontSize2xl", "avatar.letterSpacing2xl",
+    "avatar.box3xl", "avatar.radius3xl", "avatar.fontSize3xl", "avatar.letterSpacing3xl"
+  ],
+  "props": {
+    "size": ["xs", "sm", "md", "lg", "xl", "2xl", "3xl"],
+    "style": ["square", "photo"]
+  },
+  "status": "stable",
+  "usedBy": []
+}

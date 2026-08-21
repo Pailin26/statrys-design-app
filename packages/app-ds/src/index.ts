@@ -16,6 +16,8 @@ export { Chips } from "./chips/Chips";
 export type { ChipsProps, ChipsType } from "./chips/Chips";
 export { Loading } from "./loading/Loading";
 export type { LoadingProps, LoadingSize } from "./loading/Loading";
+export { Avatar } from "./avatar/Avatar";
+export type { AvatarProps, AvatarSize, AvatarStyle } from "./avatar/Avatar";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";
