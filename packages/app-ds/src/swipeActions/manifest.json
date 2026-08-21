@@ -1,0 +1,14 @@
+{
+  "name": "SwipeActions",
+  "platform": "app",
+  "description": "Swipe-to-reveal action pair (neutral \"more\" + red \"delete\") for the React Native mobile app. Presentational only — renders the revealed buttons; the swipe/drag gesture is the caller's job.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": ["bg.neutral.tertiary", "text.primary", "bg.error.bold", "text.onColor", "radius.lg", "space.3", "space.16"],
+  "props": {
+    "showMore": "boolean"
+  },
+  "status": "stable",
+  "usedBy": [],
+  "notes": "Uses Lucide's MoreVertical/Trash2 icons rather than porting accounting's hand-drawn SVGs, per contributing.md's Lucide convention."
+}

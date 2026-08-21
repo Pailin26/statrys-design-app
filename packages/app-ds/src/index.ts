@@ -26,6 +26,8 @@ export { Checkbox } from "./checkbox/Checkbox";
 export type { CheckboxProps } from "./checkbox/Checkbox";
 export { NumberStepper } from "./numberStepper/NumberStepper";
 export type { NumberStepperProps } from "./numberStepper/NumberStepper";
+export { SwipeActions } from "./swipeActions/SwipeActions";
+export type { SwipeActionsProps } from "./swipeActions/SwipeActions";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";
