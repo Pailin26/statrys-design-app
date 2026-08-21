@@ -34,6 +34,8 @@ export { PageHeader } from "./pageHeader/PageHeader";
 export type { PageHeaderProps, PageHeaderType } from "./pageHeader/PageHeader";
 export { SegmentedControlBase } from "./segmentedControlBase/SegmentedControlBase";
 export type { SegmentedControlBaseProps } from "./segmentedControlBase/SegmentedControlBase";
+export { Tooltip } from "./tooltip/Tooltip";
+export type { TooltipProps, TooltipArrow } from "./tooltip/Tooltip";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";

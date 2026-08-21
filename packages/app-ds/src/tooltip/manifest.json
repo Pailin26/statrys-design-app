@@ -1,0 +1,19 @@
+{
+  "name": "Tooltip",
+  "platform": "app",
+  "description": "Static tooltip bubble + arrow for the React Native mobile app. Non-interactive — positioning next to the target element is the caller's job.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "bg.beige.secondary", "text.primary", "text.secondary", "bg.neutralInverse.primary",
+    "text.neutralInverse.primary", "text.neutralInverse.secondary", "radius.xl",
+    "font.primary", "fontWeight.medium", "fontSize.xs", "space.2", "space.4", "space.6"
+  ],
+  "props": {
+    "inverse": "boolean",
+    "arrow": ["none", "top", "bottom", "bottom-left", "bottom-right", "left", "right"]
+  },
+  "status": "stable",
+  "usedBy": [],
+  "notes": "shadow.tooltip is a 2-layer CSS drop-shadow filter; only the larger layer is kept (RN's shadow props support one layer)."
+}
