@@ -1,0 +1,21 @@
+{
+  "name": "Banner",
+  "platform": "app",
+  "description": "Inline status message row for the React Native mobile app — subtle-tinted background with a status icon, optional title, optional link, and optional dismiss.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "bg.success.subtle", "bg.warning.subtle", "bg.error.subtle", "bg.info.subtle",
+    "border.success.subtle", "border.warning.subtle", "border.error.subtle", "border.info.subtle",
+    "icon.success.primary", "icon.warning.primary", "icon.error.primary", "icon.info.primary", "icon.secondary",
+    "text.primary", "link.primary", "radius.2xl", "space.1", "space.2", "space.10",
+    "borderWidth.base", "font.primary", "fontWeight.regular", "fontWeight.medium", "fontSize.xs", "fontSize.sm"
+  ],
+  "props": {
+    "color": ["info", "success", "warning", "error"],
+    "title": "string",
+    "linkLabel": "string"
+  },
+  "status": "stable",
+  "usedBy": []
+}
