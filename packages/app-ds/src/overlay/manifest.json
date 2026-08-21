@@ -1,0 +1,13 @@
+{
+  "name": "Overlay",
+  "platform": "app",
+  "description": "Full-bleed fading scrim behind a modal/bottom sheet, for the React Native mobile app.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": ["overlay.background", "overlay.duration"],
+  "props": {
+    "visible": "boolean"
+  },
+  "status": "stable",
+  "usedBy": []
+}
