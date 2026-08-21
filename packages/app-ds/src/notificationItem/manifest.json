@@ -1,0 +1,20 @@
+{
+  "name": "NotificationItem",
+  "platform": "app",
+  "description": "Single row in a notification list for the React Native mobile app — unread dot, title, description, clock + relative time, optional success-green amount, and optional CTA button.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "border.neutral.primary", "icon.brand", "text.primary", "text.secondary", "text.success.primary",
+    "radius.full", "borderWidth.base", "font.primary", "fontWeight.regular", "fontWeight.bold",
+    "fontSize.sm", "fontSize.xs", "space.1", "space.2", "space.4", "space.8"
+  ],
+  "props": {
+    "read": "boolean",
+    "lastItem": "boolean",
+    "showAmount": "boolean",
+    "showAction": "boolean"
+  },
+  "status": "stable",
+  "usedBy": []
+}

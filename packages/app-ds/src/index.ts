@@ -56,6 +56,8 @@ export { Tile } from "./tile/Tile";
 export type { TileProps, TileTrailing } from "./tile/Tile";
 export { FileItemBase } from "./fileItemBase/FileItemBase";
 export type { FileItemBaseProps, FileItemState, FileItemAction } from "./fileItemBase/FileItemBase";
+export { NotificationItem } from "./notificationItem/NotificationItem";
+export type { NotificationItemProps } from "./notificationItem/NotificationItem";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";

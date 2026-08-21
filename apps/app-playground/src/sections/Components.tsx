@@ -30,6 +30,7 @@ import {
   TabsBase,
   Tile,
   FileItemBase,
+  NotificationItem,
 } from "@statrys/app-ds";
 
 const VARIANTS = ["primary", "secondary", "tertiary"] as const;
@@ -484,6 +485,24 @@ function FileItemBaseDemo() {
   );
 }
 
+function NotificationItemDemo() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>NotificationItem</Text>
+      <View style={{ width: 320 }}>
+        <NotificationItem
+          title="Invoice paid"
+          text="Acme Co. paid invoice INV-0142"
+          time="2h ago"
+          amount="HKD 1,200.00"
+          actionLabel="View invoice"
+        />
+        <NotificationItem title="New message" text="Support replied to your ticket" time="1d ago" read lastItem />
+      </View>
+    </View>
+  );
+}
+
 const DEMOS: Record<string, React.ComponentType> = {
   button: ButtonDemo,
   badge: BadgeDemo,
@@ -513,6 +532,7 @@ const DEMOS: Record<string, React.ComponentType> = {
   "tabs-base": TabsBaseDemo,
   tile: TileDemo,
   "file-item-base": FileItemBaseDemo,
+  "notification-item": NotificationItemDemo,
 };
 
 export function Components({ item }: { item: string }) {
