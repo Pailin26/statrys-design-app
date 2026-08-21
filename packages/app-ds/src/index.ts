@@ -46,6 +46,8 @@ export { Search } from "./search/Search";
 export type { SearchProps } from "./search/Search";
 export { ActionRequired } from "./actionRequired/ActionRequired";
 export type { ActionRequiredProps } from "./actionRequired/ActionRequired";
+export { FAB } from "./fab/FAB";
+export type { FABProps, FABHierarchy } from "./fab/FAB";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";

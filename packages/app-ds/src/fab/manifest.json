@@ -1,0 +1,20 @@
+{
+  "name": "FAB",
+  "platform": "app",
+  "description": "Floating action button for the React Native mobile app — rounded pill or icon-only 46×46 circle, same color rules as Button.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "radius.full", "shadow.lg", "font.primary", "fontWeight.medium", "fontSize.base",
+    "button.minHeightMd", "button.paddingVerticalMd", "button.paddingHorizontalMd", "space.2", "space.6"
+  ],
+  "props": {
+    "hierarchy": ["primary", "secondary", "tertiary"],
+    "circle": "boolean",
+    "collapsed": "boolean",
+    "disabled": "boolean"
+  },
+  "status": "stable",
+  "usedBy": [],
+  "notes": "`inverse` prop not ported — app-ds's Button doesn't have an inverse hierarchy yet either. `collapsed`'s pill→circle morph is a static conditional render (web smoothly animates it; no react-native-reanimated dependency here)."
+}
