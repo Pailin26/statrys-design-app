@@ -44,6 +44,8 @@ export { TextArea } from "./textArea/TextArea";
 export type { TextAreaProps } from "./textArea/TextArea";
 export { Search } from "./search/Search";
 export type { SearchProps } from "./search/Search";
+export { ActionRequired } from "./actionRequired/ActionRequired";
+export type { ActionRequiredProps } from "./actionRequired/ActionRequired";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";

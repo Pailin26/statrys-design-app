@@ -1,0 +1,15 @@
+{
+  "name": "ActionRequired",
+  "platform": "app",
+  "description": "Single actionable row for the React Native mobile app — title (+ optional description) and a secondary \"Proceed\" button.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": ["bg.neutral.primary", "radius.xl", "shadow.lg", "text.primary", "text.secondary", "font.primary", "fontWeight.medium", "fontWeight.regular", "fontSize.sm", "fontSize.xs", "space.2", "space.4", "space.6"],
+  "props": {
+    "title": "string",
+    "description": "string",
+    "actionLabel": "string"
+  },
+  "status": "stable",
+  "usedBy": []
+}
