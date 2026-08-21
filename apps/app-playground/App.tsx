@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { IconProvider } from "@statrys/app-ds";
 import { Foundation } from "./src/sections/Foundation";
 import { Components } from "./src/sections/Components";
 import { useAppFonts } from "./src/fonts";
@@ -67,41 +68,43 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <View style={styles.shell}>
-      <View style={styles.topnav}>
-        <Text style={styles.topnavTitle}>Statrys Design System — App</Text>
-        {TABS.map((t) => (
-          <Pressable key={t.id} onPress={() => go(t.id)} style={styles.topnavTab}>
-            <Text style={[styles.topnavTabLabel, tab === t.id && styles.topnavTabLabelActive]}>{t.label}</Text>
-          </Pressable>
-        ))}
-      </View>
-      <View style={styles.body}>
-        <ScrollView style={styles.sidebar} contentContainerStyle={styles.sidebarContent}>
-          {NAV[tab].map((g) => (
-            <View key={g.group} style={styles.navGroup}>
-              <Text style={styles.navGroupLabel}>{g.group}</Text>
-              {g.items.map((navItem) => (
-                <Pressable
-                  key={navItem.id}
-                  onPress={() => go(tab, navItem.id)}
-                  style={[styles.navItem, item === navItem.id && styles.navItemActive]}
-                >
-                  <Text style={[styles.navItemLabel, item === navItem.id && styles.navItemLabelActive]}>
-                    {navItem.label}
-                  </Text>
-                </Pressable>
-              ))}
-            </View>
+    <IconProvider>
+      <View style={styles.shell}>
+        <View style={styles.topnav}>
+          <Text style={styles.topnavTitle}>Statrys Design System — App</Text>
+          {TABS.map((t) => (
+            <Pressable key={t.id} onPress={() => go(t.id)} style={styles.topnavTab}>
+              <Text style={[styles.topnavTabLabel, tab === t.id && styles.topnavTabLabelActive]}>{t.label}</Text>
+            </Pressable>
           ))}
-        </ScrollView>
-        <ScrollView style={styles.content} contentContainerStyle={styles.contentPadding}>
-          {tab === "foundation" && <Foundation item={item} />}
-          {tab === "components" && <Components item={item} />}
-        </ScrollView>
+        </View>
+        <View style={styles.body}>
+          <ScrollView style={styles.sidebar} contentContainerStyle={styles.sidebarContent}>
+            {NAV[tab].map((g) => (
+              <View key={g.group} style={styles.navGroup}>
+                <Text style={styles.navGroupLabel}>{g.group}</Text>
+                {g.items.map((navItem) => (
+                  <Pressable
+                    key={navItem.id}
+                    onPress={() => go(tab, navItem.id)}
+                    style={[styles.navItem, item === navItem.id && styles.navItemActive]}
+                  >
+                    <Text style={[styles.navItemLabel, item === navItem.id && styles.navItemLabelActive]}>
+                      {navItem.label}
+                    </Text>
+                  </Pressable>
+                ))}
+              </View>
+            ))}
+          </ScrollView>
+          <ScrollView style={styles.content} contentContainerStyle={styles.contentPadding}>
+            {tab === "foundation" && <Foundation item={item} />}
+            {tab === "components" && <Components item={item} />}
+          </ScrollView>
+        </View>
+        <StatusBar style="auto" />
       </View>
-      <StatusBar style="auto" />
-    </View>
+    </IconProvider>
   );
 }
 

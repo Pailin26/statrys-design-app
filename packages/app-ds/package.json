@@ -7,9 +7,11 @@
   "files": ["dist"],
   "peerDependencies": {
     "react": ">=18",
-    "react-native": ">=0.73"
+    "react-native": ">=0.73",
+    "react-native-svg": ">=13"
   },
   "dependencies": {
-    "@statrys/tokens": "github:Pailin26/statrys-tokens"
+    "@statrys/tokens": "github:Pailin26/statrys-tokens",
+    "lucide-react-native": "^1.33.0"
   }
 }

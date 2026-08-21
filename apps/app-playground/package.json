@@ -4,14 +4,15 @@
   "description": "Dev-only Expo app for browsing Foundation + app-ds on a simulator/device/web. Not published, not a product prototype — see docs/contributing.md for that boundary.",
   "main": "index.ts",
   "dependencies": {
-    "@statrys/tokens": "github:Pailin26/statrys-tokens",
     "@expo/metro-runtime": "~57.0.8",
+    "@statrys/tokens": "github:Pailin26/statrys-tokens",
     "expo": "~57.0.9",
     "expo-font": "~57.0.1",
     "expo-status-bar": "~57.0.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-native": "0.86.2",
+    "react-native-svg": "15.15.4",
     "react-native-web": "^0.21.2"
   },
   "devDependencies": {
