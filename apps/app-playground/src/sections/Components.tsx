@@ -39,6 +39,7 @@ import {
   ToastMessage,
   EmptyState,
   Toast,
+  ButtonDock,
 } from "@statrys/app-ds";
 
 const VARIANTS = ["primary", "secondary", "tertiary"] as const;
@@ -635,6 +636,27 @@ function ToastDemo() {
   );
 }
 
+function ButtonDockDemo() {
+  const [checked, setChecked] = useState(false);
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>ButtonDock</Text>
+      <Text style={styles.subtitle2}>type=&quot;double&quot;</Text>
+      <View style={{ width: 320, borderWidth: 1, borderColor: "#e5e5e5" }}>
+        <ButtonDock type="double" accessory selected={checked} onSelectedChange={setChecked} />
+      </View>
+      <Text style={styles.subtitle2}>type=&quot;ghost&quot; stack=&quot;horizontal&quot;</Text>
+      <View style={{ width: 320, borderWidth: 1, borderColor: "#e5e5e5" }}>
+        <ButtonDock type="ghost" stack="horizontal" primaryLabel="Confirm" secondaryLabel="Close" />
+      </View>
+      <Text style={styles.subtitle2}>with slot</Text>
+      <View style={{ width: 320, borderWidth: 1, borderColor: "#e5e5e5" }}>
+        <ButtonDock type="single" slot={<Text>Total: HKD 1,200.00</Text>} />
+      </View>
+    </View>
+  );
+}
+
 const DEMOS: Record<string, React.ComponentType> = {
   button: ButtonDemo,
   badge: BadgeDemo,
@@ -673,6 +695,7 @@ const DEMOS: Record<string, React.ComponentType> = {
   "toast-message": ToastMessageDemo,
   "empty-state": EmptyStateDemo,
   toast: ToastDemo,
+  "button-dock": ButtonDockDemo,
 };
 
 export function Components({ item }: { item: string }) {

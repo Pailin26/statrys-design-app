@@ -1,0 +1,17 @@
+{
+  "name": "ButtonDock",
+  "platform": "app",
+  "description": "Bottom action dock for the React Native mobile app, matching the DS StickyButton set — single/double/triple/ghost button stacks, optional checkbox accessory row, optional slot content (e.g. a price summary), sticky page-bottom float.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": ["alpha.white.40", "bg.neutral.primary", "radius.3xl", "space.4", "space.6", "space.8"],
+  "props": {
+    "type": ["single", "double", "ghost", "triple"],
+    "stack": ["vertical", "horizontal"],
+    "accessory": "boolean",
+    "sticky": "boolean"
+  },
+  "status": "stable",
+  "usedBy": [],
+  "notes": "Dropped vs. web: the 'IOS controls: Keyboard' mock (prototype-only chrome — a real RN app gets the actual system keyboard), and primaryIconLeft/primaryIconRight/loading/destructive/success (app-ds's own Button doesn't support these yet). Backdrop blur approximated with a flat AlphaWhite40 tint."
+}

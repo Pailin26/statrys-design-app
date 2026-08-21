@@ -74,6 +74,8 @@ export { EmptyState } from "./emptyState/EmptyState";
 export type { EmptyStateProps } from "./emptyState/EmptyState";
 export { Toast } from "./toast/Toast";
 export type { ToastProps } from "./toast/Toast";
+export { ButtonDock } from "./buttonDock/ButtonDock";
+export type { ButtonDockProps, ButtonDockType, ButtonDockStack } from "./buttonDock/ButtonDock";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";

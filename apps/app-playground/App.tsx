@@ -91,6 +91,7 @@ const NAV: Record<Tab, NavGroup[]> = {
         { id: "invoice-row", label: "InvoiceRow" },
         { id: "toast-message", label: "ToastMessage" },
         { id: "toast", label: "Toast" },
+        { id: "button-dock", label: "ButtonDock" },
       ],
     },
     {
