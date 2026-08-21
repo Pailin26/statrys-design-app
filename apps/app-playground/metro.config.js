@@ -25,7 +25,15 @@ const appDsEntry = path.resolve(workspaceRoot, "packages/app-ds/src/index.ts");
 // playgrounds' separate React 18 copy at the workspace root — causing a
 // "multiple copies of React" crash. Force these to always resolve from this
 // project's own node_modules, regardless of which file is importing them.
-const SINGLETONS = ["react", "react-dom", "react-native", "scheduler"];
+//
+// Same problem, same fix, for lucide-react-native: IconProvider (in
+// packages/app-ds/src/icon) and this app's own Components.tsx both import
+// it, but from two different physical locations — without forcing a single
+// resolution, they'd get two separate module instances with two separate
+// React Contexts, so the Provider's strokeWidth override silently wouldn't
+// reach icons rendered from the other copy (confirmed: every icon rendered
+// at strokeWidth=2, Lucide's own default, until this was added).
+const SINGLETONS = ["react", "react-dom", "react-native", "scheduler", "lucide-react-native", "react-native-svg"];
 function isSingleton(moduleName) {
   return SINGLETONS.some((name) => moduleName === name || moduleName.startsWith(`${name}/`));
 }
