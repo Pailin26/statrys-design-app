@@ -31,6 +31,7 @@ import {
   Tile,
   FileItemBase,
   NotificationItem,
+  ListText,
 } from "@statrys/app-ds";
 
 const VARIANTS = ["primary", "secondary", "tertiary"] as const;
@@ -503,6 +504,21 @@ function NotificationItemDemo() {
   );
 }
 
+function ListTextDemo() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>ListText</Text>
+      <View style={styles.row}>
+        <ListText text="HKD 1,200.00" />
+        <ListText text="Paid" description="12 Jun 2026" />
+        <ListText text="USD" flag={<View style={{ width: 20, height: 20, borderRadius: 10, backgroundColor: "#b5d9ff" }} />} />
+        <ListText text="Select a date" placeholder />
+        <ListText text="Required" error />
+      </View>
+    </View>
+  );
+}
+
 const DEMOS: Record<string, React.ComponentType> = {
   button: ButtonDemo,
   badge: BadgeDemo,
@@ -533,6 +549,7 @@ const DEMOS: Record<string, React.ComponentType> = {
   tile: TileDemo,
   "file-item-base": FileItemBaseDemo,
   "notification-item": NotificationItemDemo,
+  "list-text": ListTextDemo,
 };
 
 export function Components({ item }: { item: string }) {

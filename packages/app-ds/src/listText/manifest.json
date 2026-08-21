@@ -1,0 +1,16 @@
+{
+  "name": "ListText",
+  "platform": "app",
+  "description": "Value display for a ListRow's trailing edge, for the React Native mobile app — plain value, value + right-aligned description, or a leading flag/icon + value (\"Currency\" layout).",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": ["text.primary", "text.placeholder", "text.error.primary", "text.warning.primary", "text.secondary", "font.primary", "fontWeight.medium", "fontWeight.regular", "fontSize.sm", "fontSize.xs", "space.2"],
+  "props": {
+    "size": ["sm", "md"],
+    "placeholder": "boolean",
+    "error": "boolean",
+    "warning": "boolean"
+  },
+  "status": "stable",
+  "usedBy": []
+}

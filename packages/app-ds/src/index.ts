@@ -58,6 +58,8 @@ export { FileItemBase } from "./fileItemBase/FileItemBase";
 export type { FileItemBaseProps, FileItemState, FileItemAction } from "./fileItemBase/FileItemBase";
 export { NotificationItem } from "./notificationItem/NotificationItem";
 export type { NotificationItemProps } from "./notificationItem/NotificationItem";
+export { ListText } from "./listText/ListText";
+export type { ListTextProps } from "./listText/ListText";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";
