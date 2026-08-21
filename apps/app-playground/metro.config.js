@@ -14,6 +14,14 @@ config.resolver.nodeModulesPaths = [
   path.resolve(workspaceRoot, "node_modules"),
 ];
 
+// Metro's default assetExts only covers ttf/otf, not woff2 — but
+// packages/tokens/fonts/*.woff2 (GT Walsheim LC) is all we have, since
+// accounting only ships a web build of this font. On the web target this is
+// fine (woff2 becomes a real @font-face src, same as the browser everywhere
+// else); on true native (iOS/Android) it'll still fail to render since RN
+// itself has no woff2 decoder — a genuine ttf/otf would be needed there.
+config.resolver.assetExts = [...config.resolver.assetExts, "woff2", "woff"];
+
 // @statrys/app-ds has no build step yet (see docs/contributing.md), so its
 // package.json "main" points at a dist/ that doesn't exist — redirect the
 // bare specifier straight to source until packages/app-ds gets a real build.

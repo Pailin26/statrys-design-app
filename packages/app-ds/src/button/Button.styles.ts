@@ -23,15 +23,19 @@ import {
   ButtonPaddingHorizontalLg,
   ButtonMinHeightLg,
 } from "@statrys/tokens";
+import { nativeFontFamily } from "../nativeFont";
 
 // Every value here comes from the component-level semantic tokens in
 // packages/tokens/semantic/button.json (never a primitive directly, so
 // changing button.* there is the only edit needed to restyle every Button
-// everywhere). NOTE: "GT Walsheim LC" won't actually render on native yet —
-// accounting only ships a woff2 (web) build of this font, no .ttf/.otf, so
-// there's nothing to register via expo-font. Falls back to the OS default
-// until a native-compatible font file exists; the token wiring is already
-// correct for when it does.
+// everywhere).
+//
+// nativeFontFamily maps to a weight-specific registered family name (RN has
+// no font-weight-selection-within-one-family the way CSS does) — the
+// consuming app must have actually registered that name via expo-font (see
+// apps/app-playground/src/fonts.ts) for this to render as anything but the
+// OS default; on true native (iOS/Android) it still won't, since we only
+// have a woff2 (web) build of this font, no .ttf/.otf.
 //
 // RN's Text does not inherit font styles from an ancestor View/Pressable
 // (unlike CSS on web) — layout (padding/height) goes on the container,
@@ -41,7 +45,7 @@ export const styles = StyleSheet.create({
   containerSm: { paddingVertical: ButtonPaddingVerticalSm, paddingHorizontal: ButtonPaddingHorizontalSm, height: ButtonHeightSm },
   containerMd: { paddingVertical: ButtonPaddingVerticalMd, paddingHorizontal: ButtonPaddingHorizontalMd, minHeight: ButtonMinHeightMd },
   containerLg: { paddingVertical: ButtonPaddingVerticalLg, paddingHorizontal: ButtonPaddingHorizontalLg, minHeight: ButtonMinHeightLg },
-  label: { fontFamily: ButtonFontFamily, fontWeight: String(ButtonFontWeight) as "500" },
+  label: { fontFamily: nativeFontFamily(ButtonFontFamily, ButtonFontWeight), fontWeight: String(ButtonFontWeight) as "500" },
   textSm: { fontSize: ButtonFontSizeSm },
   textMd: { fontSize: ButtonFontSizeMd },
   textLg: { fontSize: ButtonFontSizeLg },

@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Foundation } from "./src/sections/Foundation";
 import { Components } from "./src/sections/Components";
+import { useAppFonts } from "./src/fonts";
 
 type Tab = "foundation" | "components";
 type NavGroup = { group: string; items: { id: string; label: string }[] };
@@ -54,6 +55,7 @@ function firstItem(tab: Tab): string {
 }
 
 export default function App() {
+  const [fontsLoaded] = useAppFonts();
   const [tab, setTab] = useState<Tab>("foundation");
   const [item, setItem] = useState<string>(firstItem("foundation"));
 
@@ -61,6 +63,8 @@ export default function App() {
     setTab(nextTab);
     setItem(nextItem ?? firstItem(nextTab));
   };
+
+  if (!fontsLoaded) return null;
 
   return (
     <View style={styles.shell}>

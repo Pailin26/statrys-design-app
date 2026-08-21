@@ -9,6 +9,7 @@
 // small glue code and the two apps render fundamentally differently.
 import React from "react";
 import { Platform, Text, View } from "react-native";
+import { nativeFontFamily } from "@statrys/app-ds";
 import neutralTokens from "../../../../packages/tokens/primitives/color/neutral.json";
 import brandTokens from "../../../../packages/tokens/primitives/color/brand.json";
 import statusTokens from "../../../../packages/tokens/primitives/color/status.json";
@@ -78,11 +79,10 @@ function resolve(value: string | number): string {
   return hit ? resolve(hit.value) : value;
 }
 
-// RN's fontFamily has no fallback-list concept — take just the first,
-// unquoted name from a CSS font stack (mirrors build/build.js's
-// fontFamily/native transform, which only applies to the *built* tokens.js,
-// not this raw-JSON read).
-function nativeFontFamily(css: string): string {
+// nativeFontFamily (from @statrys/app-ds) matches against the bare family
+// name ("GT Walsheim LC"), not a full CSS fallback stack — pull just the
+// first, unquoted name out before passing it through.
+function firstFamilyName(css: string): string {
   return css.split(",")[0].trim().replace(/^["']|["']$/g, "");
 }
 
@@ -156,15 +156,18 @@ function Leaf({ path, token }: { path: string; token: TokenLeaf }) {
   if (token.type === "fontFamily") {
     return (
       <View>
-        <Text style={{ fontFamily: nativeFontFamily(resolved), fontSize: 22 }}>The quick brown fox — Ag</Text>
+        <Text style={{ fontFamily: nativeFontFamily(firstFamilyName(resolved), 400), fontSize: 22 }}>
+          The quick brown fox — Ag
+        </Text>
         <Label path={path} token={token} resolved={resolved} />
       </View>
     );
   }
   if (token.type === "fontWeight") {
+    const family = firstFamilyName(resolve("{font.primary}"));
     return (
       <View>
-        <Text style={{ fontFamily: nativeFontFamily(resolve("{font.primary}")), fontWeight: String(resolved) as "400", fontSize: 22 }}>
+        <Text style={{ fontFamily: nativeFontFamily(family, Number(resolved)), fontSize: 22 }}>
           The quick brown fox
         </Text>
         <Label path={path} token={token} resolved={resolved} />
@@ -173,9 +176,10 @@ function Leaf({ path, token }: { path: string; token: TokenLeaf }) {
   }
   if (token.type === "fontSize") {
     const size = parseFloat(resolved) || 16;
+    const family = firstFamilyName(resolve("{font.primary}"));
     return (
       <View>
-        <Text style={{ fontFamily: nativeFontFamily(resolve("{font.primary}")), fontSize: size, lineHeight: size * 1.2 }}>
+        <Text style={{ fontFamily: nativeFontFamily(family, 400), fontSize: size, lineHeight: size * 1.2 }}>
           Ag Statrys
         </Text>
         <Label path={path} token={token} resolved={resolved} />
