@@ -28,6 +28,7 @@ import {
   FAB,
   InvoiceStatus,
   TabsBase,
+  Tile,
 } from "@statrys/app-ds";
 
 const VARIANTS = ["primary", "secondary", "tertiary"] as const;
@@ -453,6 +454,20 @@ function TabsBaseDemo() {
   );
 }
 
+function TileDemo() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Tile</Text>
+      <View style={{ gap: 8, width: 320 }}>
+        <Tile avatar="OR" title="Olivia Rhye" text="olivia@statrys.com" trailing="chevron" onPress={() => {}} />
+        <Tile icon={<ArrowUpRight size={24} color="#1b1b1b" />} title="Selected row" selected trailing="check" onPress={() => {}} />
+        <Tile title="Primary account" badgeLabel="Primary" text="HKD 1234 5678" onLayer="gray" />
+        <Tile title="Disabled row" text="Can't be selected" disabled trailing="chevron" />
+      </View>
+    </View>
+  );
+}
+
 const DEMOS: Record<string, React.ComponentType> = {
   button: ButtonDemo,
   badge: BadgeDemo,
@@ -480,6 +495,7 @@ const DEMOS: Record<string, React.ComponentType> = {
   fab: FABDemo,
   "invoice-status": InvoiceStatusDemo,
   "tabs-base": TabsBaseDemo,
+  tile: TileDemo,
 };
 
 export function Components({ item }: { item: string }) {

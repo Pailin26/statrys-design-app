@@ -1,0 +1,25 @@
+{
+  "name": "Tile",
+  "platform": "app",
+  "description": "List row for the React Native mobile app — leading visual (icon/flag/avatar), title + optional second line, and a reserved 30px trailing slot (none/chevron/check). selected = brand border + warm surface; onLayer=\"gray\" drops the border.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "bg.neutral.primary", "border.neutral.primary", "bg.neutral.primaryHover", "bg.brand.primary",
+    "border.neutral.primaryHover", "bg.neutral.disabled", "border.error.bold", "text.neutralInverse.disabled",
+    "text.primary", "text.secondary", "text.disabled", "bg.beige.tertiary", "radius.md", "radius.2xl",
+    "borderWidth.base", "font.primary", "fontWeight.regular", "fontWeight.medium", "fontSize.sm", "fontSize.xs",
+    "space.1", "space.3", "space.5", "space.6", "space.8"
+  ],
+  "props": {
+    "size": ["md", "sm"],
+    "trailing": ["none", "chevron", "check"],
+    "selected": "boolean",
+    "disabled": "boolean",
+    "error": "boolean",
+    "onLayer": ["neutral", "gray"]
+  },
+  "status": "stable",
+  "usedBy": [],
+  "notes": "The `icon` slot doesn't force a tint color on native (RN has no CSS-style color inheritance to an arbitrary child) — same as Button's icon slot; pass an already-colored icon."
+}

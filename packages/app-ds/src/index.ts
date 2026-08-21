@@ -52,6 +52,8 @@ export { InvoiceStatus } from "./invoiceStatus/InvoiceStatus";
 export type { InvoiceStatusProps } from "./invoiceStatus/InvoiceStatus";
 export { TabsBase } from "./tabsBase/TabsBase";
 export type { TabsBaseProps, TabsBaseVariant } from "./tabsBase/TabsBase";
+export { Tile } from "./tile/Tile";
+export type { TileProps, TileTrailing } from "./tile/Tile";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";

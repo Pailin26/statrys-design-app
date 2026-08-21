@@ -80,6 +80,7 @@ const NAV: Record<Tab, NavGroup[]> = {
         { id: "page-header", label: "PageHeader" },
         { id: "segmented-control-base", label: "SegmentedControlBase" },
         { id: "tabs-base", label: "TabsBase" },
+        { id: "tile", label: "Tile" },
       ],
     },
     {
