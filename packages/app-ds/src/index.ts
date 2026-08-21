@@ -10,6 +10,8 @@ export { XClose } from "./xClose/XClose";
 export type { XCloseProps, XCloseSize } from "./xClose/XClose";
 export { Overlay } from "./overlay/Overlay";
 export type { OverlayProps } from "./overlay/Overlay";
+export { ListCard } from "./listCard/ListCard";
+export type { ListCardProps } from "./listCard/ListCard";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";

@@ -1,0 +1,13 @@
+{
+  "name": "ListCard",
+  "platform": "app",
+  "description": "Grouped-rows container that hosts a stack of ListRow children, for the React Native mobile app.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": ["listCard.background", "listCard.borderColor", "listCard.borderWidth", "listCard.radius", "listCard.paddingHorizontal"],
+  "props": {
+    "onLayer": ["neutral", "gray"]
+  },
+  "status": "stable",
+  "usedBy": []
+}
