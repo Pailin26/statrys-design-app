@@ -2,26 +2,36 @@ import { StyleSheet } from "react-native";
 import {
   ButtonPrimary,
   ButtonPrimaryActive,
+  ButtonSecondaryBg,
+  ButtonSecondaryBgActive,
+  ButtonSecondaryBgDisabled,
   ButtonSecondaryActive,
   ButtonTertiaryActive,
   ButtonDisabled,
   ButtonTextOnFill,
   ButtonTextOnFillDisabled,
   ButtonRadius,
+  ButtonRadiusFull,
   ButtonFontFamily,
   ButtonFontWeight,
   ButtonFontSizeSm,
   ButtonPaddingVerticalSm,
   ButtonPaddingHorizontalSm,
   ButtonHeightSm,
+  ButtonSquareSizeSm,
+  ButtonCircleSizeSm,
   ButtonFontSizeMd,
   ButtonPaddingVerticalMd,
   ButtonPaddingHorizontalMd,
   ButtonMinHeightMd,
+  ButtonSquareSizeMd,
+  ButtonCircleSizeMd,
   ButtonFontSizeLg,
   ButtonPaddingVerticalLg,
   ButtonPaddingHorizontalLg,
   ButtonMinHeightLg,
+  ButtonSquareSizeLg,
+  ButtonCircleSizeLg,
 } from "@statrys/tokens";
 import { nativeFontFamily } from "../nativeFont";
 
@@ -49,6 +59,19 @@ export const styles = StyleSheet.create({
   textSm: { fontSize: ButtonFontSizeSm },
   textMd: { fontSize: ButtonFontSizeMd },
   textLg: { fontSize: ButtonFontSizeLg },
+  // Shape=Rounded — pill radius instead of the default rec radius.
+  rounded: { borderRadius: ButtonRadiusFull },
+  // Shape=Square/Circle — icon-only, fixed square box. No Inverse=True
+  // variant exists in Figma for these, so they're not meant to combine with
+  // an inverse hierarchy.
+  square: { padding: 0 },
+  circle: { padding: 0, borderRadius: ButtonRadiusFull },
+  squareSm: { width: ButtonSquareSizeSm, height: ButtonSquareSizeSm },
+  circleSm: { width: ButtonCircleSizeSm, height: ButtonCircleSizeSm },
+  squareMd: { width: ButtonSquareSizeMd, height: ButtonSquareSizeMd },
+  circleMd: { width: ButtonCircleSizeMd, height: ButtonCircleSizeMd },
+  squareLg: { width: ButtonSquareSizeLg, height: ButtonSquareSizeLg },
+  circleLg: { width: ButtonCircleSizeLg, height: ButtonCircleSizeLg },
 });
 
 // Hierarchy/states mirror apa-statrys/accounting's real Button
@@ -62,9 +85,9 @@ export const containerColors = {
     disabled: { backgroundColor: ButtonDisabled, borderColor: "transparent" },
   },
   secondary: {
-    base: { backgroundColor: "transparent", borderColor: ButtonPrimary },
-    pressed: { borderColor: ButtonSecondaryActive },
-    disabled: { borderColor: ButtonDisabled },
+    base: { backgroundColor: ButtonSecondaryBg, borderColor: ButtonPrimary },
+    pressed: { backgroundColor: ButtonSecondaryBgActive, borderColor: ButtonSecondaryActive },
+    disabled: { backgroundColor: ButtonSecondaryBgDisabled, borderColor: ButtonDisabled },
   },
   tertiary: {
     base: { backgroundColor: "transparent", borderColor: "transparent" },
