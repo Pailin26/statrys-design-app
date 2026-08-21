@@ -10,6 +10,9 @@ export type ButtonProps = {
   onPress?: PressableProps["onPress"];
 };
 
+const CONTAINER_SIZE = { sm: styles.containerSm, md: styles.containerMd, lg: styles.containerLg };
+const TEXT_SIZE = { sm: styles.textSm, md: styles.textMd, lg: styles.textLg };
+
 export function Button({
   variant = "primary",
   size = "md",
@@ -24,7 +27,7 @@ export function Button({
     <Pressable
       style={({ pressed }) => [
         styles.base,
-        styles[size],
+        CONTAINER_SIZE[size],
         container.base,
         pressed && !disabled && "pressed" in container ? container.pressed : null,
         disabled ? container.disabled : null,
@@ -36,6 +39,7 @@ export function Button({
         <Text
           style={[
             styles.label,
+            TEXT_SIZE[size],
             { color: label.base },
             pressed && !disabled && "pressed" in label ? { color: label.pressed } : null,
             disabled && "disabled" in label ? { color: label.disabled } : null,
