@@ -1,0 +1,19 @@
+{
+  "name": "Search",
+  "platform": "app",
+  "description": "36px search field for the React Native mobile app — leading search icon, trailing mic action swapped for an X clear button while focused.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "field.bg", "field.border", "field.borderFocus", "field.bgDisabled", "border.error.bold",
+    "text.primary", "text.placeholder", "text.disabled", "font.primary", "fontWeight.regular",
+    "fontSize.sm", "borderWidth.base", "radius.xl", "space.4", "space.8"
+  ],
+  "props": {
+    "disabled": "boolean",
+    "error": "boolean",
+    "showAction": "boolean"
+  },
+  "status": "stable",
+  "usedBy": []
+}

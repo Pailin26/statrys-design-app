@@ -42,6 +42,8 @@ export { Chevron as TextFieldChevron, CalendarIcon as TextFieldCalendarIcon } fr
 export { USFlag } from "./textField/USFlag";
 export { TextArea } from "./textArea/TextArea";
 export type { TextAreaProps } from "./textArea/TextArea";
+export { Search } from "./search/Search";
+export type { SearchProps } from "./search/Search";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";
