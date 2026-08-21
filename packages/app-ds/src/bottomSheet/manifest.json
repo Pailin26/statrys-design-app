@@ -1,0 +1,20 @@
+{
+  "name": "BottomSheet",
+  "platform": "app",
+  "description": "Presentational bottom-sheet container for the React Native mobile app — white panel with rounded top corners, sticky-style header (grabber + title + optional action button), content, and footer/bottom-pad. Modal behavior (scrim, motion, positioning) stays with the caller.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "bg.neutral.primary", "shadow.bottomsheets", "shadow.md", "radius.5xl", "radius.full",
+    "alpha.white.40", "text.primary", "icon.disabled", "font.primary", "fontWeight.medium",
+    "typography.cardTitleMdMobile", "space.4", "space.6", "space.8", "space.16", "space.24"
+  ],
+  "props": {
+    "title": "string",
+    "showHeader": "boolean",
+    "actionLabel": "string"
+  },
+  "status": "stable",
+  "usedBy": [],
+  "notes": "Header fade and action button's backdrop blur are approximated with a flat AlphaWhite40 tint (no expo-linear-gradient/expo-blur dependency yet)."
+}
