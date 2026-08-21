@@ -38,6 +38,7 @@ import {
   SegmentedControls,
   ToastMessage,
   EmptyState,
+  Toast,
 } from "@statrys/app-ds";
 
 const VARIANTS = ["primary", "secondary", "tertiary"] as const;
@@ -619,6 +620,21 @@ function EmptyStateDemo() {
   );
 }
 
+function ToastDemo() {
+  const [open, setOpen] = useState(true);
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Toast</Text>
+      <Button size="sm" onPress={() => setOpen((o) => !o)}>
+        Toggle toast
+      </Button>
+      <View style={[styles.overlayBox, { height: 160 }]}>
+        <Toast open={open} message="Invoice sent" subtext="Marked as sent" onDone={() => setOpen(false)} bottomOffset={16} />
+      </View>
+    </View>
+  );
+}
+
 const DEMOS: Record<string, React.ComponentType> = {
   button: ButtonDemo,
   badge: BadgeDemo,
@@ -656,6 +672,7 @@ const DEMOS: Record<string, React.ComponentType> = {
   "segmented-controls": SegmentedControlsDemo,
   "toast-message": ToastMessageDemo,
   "empty-state": EmptyStateDemo,
+  toast: ToastDemo,
 };
 
 export function Components({ item }: { item: string }) {

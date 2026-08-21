@@ -90,6 +90,7 @@ const NAV: Record<Tab, NavGroup[]> = {
         { id: "horizontal-tabs", label: "HorizontalTabs" },
         { id: "invoice-row", label: "InvoiceRow" },
         { id: "toast-message", label: "ToastMessage" },
+        { id: "toast", label: "Toast" },
       ],
     },
     {

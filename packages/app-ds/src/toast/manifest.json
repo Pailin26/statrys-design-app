@@ -1,0 +1,17 @@
+{
+  "name": "Toast",
+  "platform": "app",
+  "description": "Bottom-anchored toast wrapper around ToastMessage for the React Native mobile app — auto-hides after `duration`, slides/fades in and out. Caller renders it inside a relatively-positioned container that fills the screen.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [],
+  "props": {
+    "open": "boolean",
+    "duration": "number",
+    "variant": ["default", "success", "error", "warning"],
+    "bottomOffset": "number"
+  },
+  "status": "stable",
+  "usedBy": [],
+  "notes": "Web uses Framer Motion (AnimatePresence + spring); ported to RN's built-in Animated.spring (supports the same stiffness/damping/mass physics config), no new dependency."
+}
