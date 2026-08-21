@@ -48,7 +48,7 @@ const NAV: Record<Tab, NavGroup[]> = {
       ],
     },
   ],
-  components: [{ group: "Components", items: [{ id: "button", label: "Button" }] }],
+  components: [{ group: "Forms and input", items: [{ id: "button", label: "Button" }] }],
 };
 
 function firstItem(tab: Tab): string {
