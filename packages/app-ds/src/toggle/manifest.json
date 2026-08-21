@@ -1,0 +1,19 @@
+{
+  "name": "Toggle",
+  "platform": "app",
+  "description": "Switch control for the React Native mobile app. Prop shape (`selected`) matches web-ds's Toggle.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "toggle.trackWidth", "toggle.trackHeight", "toggle.knobSize", "toggle.knobOffset",
+    "toggle.knobOffsetWithBorder", "toggle.trackBorderWidth", "toggle.trackBg",
+    "toggle.trackBgSelected", "toggle.trackBgSelectedDisabled", "toggle.trackBorderDisabled",
+    "toggle.knobBg", "toggle.knobBgDisabled"
+  ],
+  "props": {
+    "selected": "boolean",
+    "disabled": "boolean"
+  },
+  "status": "stable",
+  "usedBy": []
+}

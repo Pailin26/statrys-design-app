@@ -4,6 +4,8 @@ export { Badge } from "./badge/Badge";
 export type { BadgeProps, BadgeColor, BadgeVariant } from "./badge/Badge";
 export { NotiBadge } from "./notiBadge/NotiBadge";
 export type { NotiBadgeProps } from "./notiBadge/NotiBadge";
+export { Toggle } from "./toggle/Toggle";
+export type { ToggleProps } from "./toggle/Toggle";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";
