@@ -85,6 +85,7 @@ const NAV: Record<Tab, NavGroup[]> = {
         { id: "notification-item", label: "NotificationItem" },
         { id: "list-text", label: "ListText" },
         { id: "list-row", label: "ListRow" },
+        { id: "horizontal-tabs", label: "HorizontalTabs" },
       ],
     },
     {

@@ -1,0 +1,14 @@
+{
+  "name": "HorizontalTabs",
+  "platform": "app",
+  "description": "Horizontally-scrollable row of TabsBase items for the React Native mobile app.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": ["border.neutral.primary", "space.4"],
+  "props": {
+    "variant": ["button", "underline"],
+    "activeIndex": "number"
+  },
+  "status": "stable",
+  "usedBy": []
+}

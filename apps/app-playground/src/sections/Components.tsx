@@ -33,6 +33,7 @@ import {
   NotificationItem,
   ListText,
   ListRow,
+  HorizontalTabs,
 } from "@statrys/app-ds";
 
 const VARIANTS = ["primary", "secondary", "tertiary"] as const;
@@ -539,6 +540,20 @@ function ListRowDemo() {
   );
 }
 
+function HorizontalTabsDemo() {
+  const [active, setActive] = useState(0);
+  const tabs = ["All", "Paid", "Overdue", "Draft"];
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>HorizontalTabs</Text>
+      <Text style={styles.subtitle2}>variant=&quot;button&quot;</Text>
+      <HorizontalTabs tabs={tabs} activeIndex={active} onChange={setActive} unread={[undefined, undefined, "3"]} />
+      <Text style={styles.subtitle2}>variant=&quot;underline&quot;</Text>
+      <HorizontalTabs tabs={tabs} activeIndex={active} onChange={setActive} variant="underline" />
+    </View>
+  );
+}
+
 const DEMOS: Record<string, React.ComponentType> = {
   button: ButtonDemo,
   badge: BadgeDemo,
@@ -571,6 +586,7 @@ const DEMOS: Record<string, React.ComponentType> = {
   "notification-item": NotificationItemDemo,
   "list-text": ListTextDemo,
   "list-row": ListRowDemo,
+  "horizontal-tabs": HorizontalTabsDemo,
 };
 
 export function Components({ item }: { item: string }) {

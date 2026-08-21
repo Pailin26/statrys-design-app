@@ -62,6 +62,8 @@ export { ListText } from "./listText/ListText";
 export type { ListTextProps } from "./listText/ListText";
 export { ListRow } from "./listRow/ListRow";
 export type { ListRowProps, ListRowTrailing } from "./listRow/ListRow";
+export { HorizontalTabs } from "./horizontalTabs/HorizontalTabs";
+export type { HorizontalTabsProps } from "./horizontalTabs/HorizontalTabs";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";
