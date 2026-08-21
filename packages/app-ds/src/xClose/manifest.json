@@ -1,0 +1,17 @@
+{
+  "name": "XClose",
+  "platform": "app",
+  "description": "Square close/dismiss hit target with an X glyph, for the React Native mobile app.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "xClose.icon", "xClose.iconInverse", "xClose.hoverBg", "xClose.hoverBgInverse",
+    "xClose.sizeSm", "xClose.sizeMd", "xClose.radiusSm", "xClose.radiusMd"
+  ],
+  "props": {
+    "size": ["sm", "md"],
+    "inverse": "boolean"
+  },
+  "status": "stable",
+  "usedBy": []
+}

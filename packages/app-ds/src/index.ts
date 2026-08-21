@@ -6,6 +6,8 @@ export { NotiBadge } from "./notiBadge/NotiBadge";
 export type { NotiBadgeProps } from "./notiBadge/NotiBadge";
 export { Toggle } from "./toggle/Toggle";
 export type { ToggleProps } from "./toggle/Toggle";
+export { XClose } from "./xClose/XClose";
+export type { XCloseProps, XCloseSize } from "./xClose/XClose";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";
