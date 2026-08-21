@@ -14,6 +14,8 @@ export { ListCard } from "./listCard/ListCard";
 export type { ListCardProps } from "./listCard/ListCard";
 export { Chips } from "./chips/Chips";
 export type { ChipsProps, ChipsType } from "./chips/Chips";
+export { Loading } from "./loading/Loading";
+export type { LoadingProps, LoadingSize } from "./loading/Loading";
 export { nativeFontFamily } from "./nativeFont";
 export { IconProvider } from "./icon/IconProvider";
 export type { IconProviderProps } from "./icon/IconProvider";
