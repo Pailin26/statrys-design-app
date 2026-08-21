@@ -1,0 +1,28 @@
+{
+  "name": "OutstandingCard",
+  "platform": "app",
+  "description": "Dashboard hero card for the React Native mobile app — expected amount, a tappable Collected box with a progress bar (gradient, or solid success green at 100%), optional encouragement line, and an Outstanding amount with an optional invoices link.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "bg.neutralInverse.primary", "text.neutralInverse.primary", "text.neutralInverse.secondary",
+    "bg.neutralInverse.secondary", "bg.neutralInverse.tertiary", "bg.success.bold", "brand.5", "link.inverse",
+    "font.primary", "fontWeight.black", "fontWeight.bold", "fontWeight.regular", "fontWeight.medium",
+    "typography.h3", "typography.h5", "typography.bodyMd", "typography.caption", "typography.captionSm",
+    "fontSize.sm", "radius.3xl", "radius.xl", "radius.full", "borderWidth.base",
+    "space.1", "space.2", "space.3", "space.4", "space.6", "space.8"
+  ],
+  "props": {
+    "currency": "string",
+    "expected": "string",
+    "collected": "string",
+    "outstanding": "string",
+    "percent": "number",
+    "encouragement": "string",
+    "linkLabel": "string",
+    "outstandingSuffix": "string"
+  },
+  "status": "stable",
+  "usedBy": [],
+  "notes": "Progress bar's gradient fill is a solid Brand5 on native (no expo-linear-gradient dependency yet). Uses Lucide's CreditCard/Rocket/ChevronRight icons instead of porting accounting's custom SVG assets."
+}
