@@ -34,6 +34,7 @@ import {
   ListText,
   ListRow,
   HorizontalTabs,
+  InvoiceRow,
 } from "@statrys/app-ds";
 
 const VARIANTS = ["primary", "secondary", "tertiary"] as const;
@@ -554,6 +555,27 @@ function HorizontalTabsDemo() {
   );
 }
 
+function InvoiceRowDemo() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>InvoiceRow</Text>
+      <View style={{ width: 320 }}>
+        <InvoiceRow title="Acme Co." invoiceNo="INV-0142" status="Paid" statusCaption="12 Jun 2026" amount="USD 6,430.05" onPress={() => {}} />
+        <InvoiceRow
+          title="Beta LLC"
+          invoiceNo="INV-0143"
+          status="Refunded"
+          statusColor="info"
+          amount="USD 1,200.00"
+          creditedAmount="USD 300.00"
+          onCreditedPress={() => {}}
+          lastItem
+        />
+      </View>
+    </View>
+  );
+}
+
 const DEMOS: Record<string, React.ComponentType> = {
   button: ButtonDemo,
   badge: BadgeDemo,
@@ -587,6 +609,7 @@ const DEMOS: Record<string, React.ComponentType> = {
   "list-text": ListTextDemo,
   "list-row": ListRowDemo,
   "horizontal-tabs": HorizontalTabsDemo,
+  "invoice-row": InvoiceRowDemo,
 };
 
 export function Components({ item }: { item: string }) {

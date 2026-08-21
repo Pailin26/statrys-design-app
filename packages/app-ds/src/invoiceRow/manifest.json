@@ -1,0 +1,18 @@
+{
+  "name": "InvoiceRow",
+  "platform": "app",
+  "description": "Invoice list row for the React Native mobile app — status (InvoiceStatus), title + invoice number, amount, and an optional \"Credited amount\" strip.",
+  "figmaFileKey": "",
+  "figmaNodeId": "",
+  "consumesTokens": [
+    "border.neutral.primary", "bg.neutral.secondary", "text.primary", "text.secondary", "radius.xl",
+    "borderWidth.base", "font.primary", "fontWeight.medium", "fontWeight.regular", "fontSize.sm",
+    "fontSize.xs", "space.1", "space.2", "space.3", "space.4", "space.6"
+  ],
+  "props": {
+    "statusColor": ["neutral", "success", "warning", "error", "info", "custom"],
+    "lastItem": "boolean"
+  },
+  "status": "stable",
+  "usedBy": []
+}
