@@ -47,20 +47,63 @@ const SHAPES = ["square", "circle"] as const;
 const SIZES = ["sm", "md", "lg"] as const;
 const ICON_SIZE = { sm: 16, md: 20, lg: 24 };
 
+// RN has no CSS Grid, so this is a plain flex-row-per-row table: a fixed-width
+// label column, then one flexible cell per column. Same "one state per row,
+// one axis value per column" pattern as the web playground's VariantGrid.
+function VariantGrid<Col extends string>({
+  columns,
+  rows,
+  columnLabelWidth = 110,
+  showColumnHeaders = true,
+}: {
+  columns: readonly Col[];
+  rows: { label: string; render: (column: Col) => React.ReactNode }[];
+  columnLabelWidth?: number;
+  /** Off for a single-column table where the column value isn't a real axis. */
+  showColumnHeaders?: boolean;
+}) {
+  return (
+    <View style={styles.grid}>
+      {showColumnHeaders && (
+        <View style={styles.gridRow}>
+          <View style={{ width: columnLabelWidth }} />
+          {columns.map((column) => (
+            <View key={column} style={styles.gridCell}>
+              <Text style={styles.gridHeaderLabel}>{column}</Text>
+            </View>
+          ))}
+        </View>
+      )}
+      {rows.map((row) => (
+        <View key={row.label} style={styles.gridRow}>
+          <View style={{ width: columnLabelWidth }}>
+            <Text style={styles.gridRowLabel}>{row.label}</Text>
+          </View>
+          {columns.map((column) => (
+            <View key={column} style={styles.gridCell}>
+              {row.render(column)}
+            </View>
+          ))}
+        </View>
+      ))}
+    </View>
+  );
+}
+
 function ButtonDemo() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Button</Text>
       {VARIANTS.map((variant) => (
-        <View key={variant} style={styles.row}>
-          {SIZES.map((size) => (
-            <Button key={size} variant={variant} size={size}>
-              {`${variant} / ${size}`}
-            </Button>
-          ))}
-          <Button variant={variant} disabled>
-            disabled
-          </Button>
+        <View key={variant}>
+          <Text style={styles.subtitle2}>{variant}</Text>
+          <VariantGrid
+            columns={SIZES}
+            rows={[
+              { label: "Default", render: (size) => <Button variant={variant} size={size}>{`${variant} / ${size}`}</Button> },
+              { label: "Disabled", render: (size) => <Button variant={variant} size={size} disabled>{`${variant} / ${size}`}</Button> },
+            ]}
+          />
         </View>
       ))}
 
@@ -73,25 +116,37 @@ function ButtonDemo() {
         <View key={shape}>
           <Text style={styles.subtitle2}>{shape}</Text>
           {VARIANTS.map((variant) => (
-            <View key={variant} style={styles.row}>
-              {SIZES.map((size) => (
-                <Button
-                  key={size}
-                  variant={variant}
-                  size={size}
-                  shape={shape}
-                  icon={<ArrowUpRight size={ICON_SIZE[size]} />}
-                  accessibilityLabel={`${variant} ${shape} ${size}`}
-                />
-              ))}
-              <Button
-                variant={variant}
-                shape={shape}
-                icon={<ArrowUpRight size={20} />}
-                accessibilityLabel={`${variant} ${shape} disabled`}
-                disabled
-              />
-            </View>
+            <VariantGrid
+              key={variant}
+              columns={SIZES}
+              rows={[
+                {
+                  label: variant,
+                  render: (size) => (
+                    <Button
+                      variant={variant}
+                      size={size}
+                      shape={shape}
+                      icon={<ArrowUpRight size={ICON_SIZE[size]} />}
+                      accessibilityLabel={`${variant} ${shape} ${size}`}
+                    />
+                  ),
+                },
+                {
+                  label: `${variant}, disabled`,
+                  render: (size) => (
+                    <Button
+                      variant={variant}
+                      size={size}
+                      shape={shape}
+                      icon={<ArrowUpRight size={ICON_SIZE[size]} />}
+                      accessibilityLabel={`${variant} ${shape} ${size} disabled`}
+                      disabled
+                    />
+                  ),
+                },
+              ]}
+            />
           ))}
         </View>
       ))}
@@ -99,22 +154,21 @@ function ButtonDemo() {
   );
 }
 
+const BADGE_COLORS = ["neutral", "success", "warning", "error", "info", "custom"] as const;
+const BADGE_VARIANTS = ["subtle", "bold", "text"] as const;
+
 function BadgeDemo() {
-  const colors = ["neutral", "success", "warning", "error", "info", "custom"] as const;
-  const variants = ["subtle", "bold", "text"] as const;
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Badge</Text>
-      {variants.map((variant) => (
-        <View key={variant}>
-          <Text style={styles.subtitle2}>{variant}</Text>
-          <View style={styles.row}>
-            {colors.map((color) => (
-              <Badge key={color} label={color} variant={variant} color={color} />
-            ))}
-          </View>
-        </View>
-      ))}
+      <VariantGrid
+        columns={BADGE_COLORS}
+        columnLabelWidth={60}
+        rows={BADGE_VARIANTS.map((variant) => ({
+          label: variant,
+          render: (color: (typeof BADGE_COLORS)[number]) => <Badge label={color} variant={variant} color={color} />,
+        }))}
+      />
       <Text style={styles.subtitle2}>Sizes (subtle/neutral)</Text>
       <View style={styles.row}>
         {SIZES.map((size) => (
@@ -140,31 +194,61 @@ function NotiBadgeDemo() {
   );
 }
 
+const TOGGLE_COLUMNS = ["Enabled", "Disabled"] as const;
+
 function ToggleDemo() {
+  const [off, setOff] = useState(false);
   const [on, setOn] = useState(true);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Toggle</Text>
-      <View style={styles.row}>
-        <Toggle selected={on} onChange={setOn} accessibilityLabel="Demo toggle" />
-        <Toggle selected={false} disabled />
-        <Toggle selected={true} disabled />
-      </View>
+      <VariantGrid
+        columns={TOGGLE_COLUMNS}
+        rows={[
+          {
+            label: "Off",
+            render: (column) =>
+              column === "Enabled" ? (
+                <Toggle selected={off} onChange={setOff} accessibilityLabel="off, enabled" />
+              ) : (
+                <Toggle selected={false} disabled accessibilityLabel="off, disabled" />
+              ),
+          },
+          {
+            label: "On",
+            render: (column) =>
+              column === "Enabled" ? (
+                <Toggle selected={on} onChange={setOn} accessibilityLabel="on, enabled" />
+              ) : (
+                <Toggle selected={true} disabled accessibilityLabel="on, disabled" />
+              ),
+          },
+        ]}
+      />
     </View>
   );
 }
+
+const XCLOSE_SIZES = ["sm", "md"] as const;
 
 function XCloseDemo() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>XClose</Text>
-      <View style={styles.row}>
-        <XClose size="sm" />
-        <XClose size="md" />
-        <View style={styles.darkSwatch}>
-          <XClose size="md" inverse />
-        </View>
-      </View>
+      <VariantGrid
+        columns={XCLOSE_SIZES}
+        rows={[
+          { label: "Default", render: (size) => <XClose size={size} /> },
+          {
+            label: "Inverse",
+            render: (size) => (
+              <View style={styles.darkSwatch}>
+                <XClose size={size} inverse />
+              </View>
+            ),
+          },
+        ]}
+      />
     </View>
   );
 }
@@ -275,16 +359,32 @@ function BottomSheetDemo() {
   );
 }
 
+const CHECKBOX_SIZES = ["sm", "md"] as const;
+const CHECKBOX_VARIANT_ROWS: { label: string; props: Partial<React.ComponentProps<typeof Checkbox>> }[] = [
+  { label: "Unselected", props: { selected: false } },
+  { label: "Selected", props: { selected: true } },
+  { label: "Indeterminate", props: { selected: true, indeterminate: true } },
+  { label: "Disabled, unselected", props: { selected: false, disabled: true } },
+  { label: "Disabled, selected", props: { selected: true, disabled: true } },
+];
+
 function CheckboxDemo() {
-  const [checked, setChecked] = useState(true);
+  const [withDesc, setWithDesc] = useState(false);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Checkbox</Text>
-      <Checkbox label="Selected" selected={checked} onChange={setChecked} />
-      <Checkbox label="With description" description="Supporting detail line" selected={false} onChange={() => {}} />
-      <Checkbox label="Indeterminate" selected indeterminate onChange={() => {}} />
-      <Checkbox label="Disabled" selected disabled onChange={() => {}} />
-      <Checkbox label="size=md" size="md" selected onChange={() => {}} />
+      <VariantGrid
+        columns={CHECKBOX_SIZES}
+        columnLabelWidth={150}
+        rows={CHECKBOX_VARIANT_ROWS.map((row) => ({
+          label: row.label,
+          render: (size: (typeof CHECKBOX_SIZES)[number]) => (
+            <Checkbox label="Label" size={size} onChange={() => {}} {...row.props} />
+          ),
+        }))}
+      />
+      <Text style={styles.subtitle2}>With description</Text>
+      <Checkbox label="Remember me" description="Save my login details for next time" selected={withDesc} onChange={setWithDesc} />
     </View>
   );
 }
@@ -370,16 +470,41 @@ function TooltipDemo() {
   );
 }
 
+const TEXT_FIELD_TYPES = ["text", "mobile", "currency", "dropdown"] as const;
+
 function TextFieldDemo() {
-  const [value, setValue] = useState("");
   return (
     <View style={styles.container}>
       <Text style={styles.title}>TextField</Text>
-      <TextField label="Email" placeholder="you@example.com" value={value} onChange={setValue} />
-      <TextField type="mobile" onSelectorPress={() => {}} value={value} onChange={setValue} />
-      <TextField type="currency" onSelectorPress={() => {}} placeholder="0.00" />
-      <TextField type="dropdown" placeholder="Select a customer" onPress={() => {}} />
-      <TextField label="With error" error caption="This field is required" mandatory />
+      <VariantGrid
+        columns={TEXT_FIELD_TYPES}
+        columnLabelWidth={90}
+        rows={[
+          {
+            label: "Default",
+            render: (type) => (
+              <TextField
+                type={type}
+                placeholder={type === "currency" ? "0.00" : type === "dropdown" ? "Select a customer" : undefined}
+                onSelectorPress={type === "mobile" || type === "currency" ? () => {} : undefined}
+                onPress={type === "dropdown" ? () => {} : undefined}
+              />
+            ),
+          },
+          {
+            label: "Disabled",
+            render: (type) => (
+              <TextField
+                type={type}
+                disabled
+                placeholder={type === "currency" ? "0.00" : type === "dropdown" ? "Select a customer" : undefined}
+              />
+            ),
+          },
+        ]}
+      />
+      <Text style={styles.subtitle2}>Labeled, with error</Text>
+      <TextField label="Email" error caption="This field is required" mandatory />
     </View>
   );
 }
@@ -417,16 +542,16 @@ function FABDemo() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>FAB</Text>
-      <View style={styles.row}>
-        {VARIANTS.map((hierarchy) => (
-          <FAB key={hierarchy} hierarchy={hierarchy} label="New" iconLeft={<Plus size={20} />} />
-        ))}
-      </View>
-      <View style={styles.row}>
-        {VARIANTS.map((hierarchy) => (
-          <FAB key={hierarchy} hierarchy={hierarchy} circle icon={<Star size={20} />} accessibilityLabel="Favorite" />
-        ))}
-      </View>
+      <VariantGrid
+        columns={VARIANTS}
+        rows={[
+          { label: "Pill", render: (hierarchy) => <FAB hierarchy={hierarchy} label="New" iconLeft={<Plus size={20} />} /> },
+          {
+            label: "Circle",
+            render: (hierarchy) => <FAB hierarchy={hierarchy} circle icon={<Star size={20} />} accessibilityLabel="Favorite" />,
+          },
+        ]}
+      />
     </View>
   );
 }
@@ -443,24 +568,19 @@ function InvoiceStatusDemo() {
   );
 }
 
+const TABS_BASE_VARIANTS = ["button", "underline"] as const;
+
 function TabsBaseDemo() {
-  const [active, setActive] = useState(0);
-  const labels = ["All", "Paid", "Overdue"];
   return (
     <View style={styles.container}>
       <Text style={styles.title}>TabsBase</Text>
-      <Text style={styles.subtitle2}>variant=&quot;button&quot;</Text>
-      <View style={styles.row}>
-        {labels.map((label, i) => (
-          <TabsBase key={label} label={label} variant="button" active={active === i} onPress={() => setActive(i)} unread={i === 2 ? "3" : undefined} />
-        ))}
-      </View>
-      <Text style={styles.subtitle2}>variant=&quot;underline&quot;</Text>
-      <View style={styles.row}>
-        {labels.map((label, i) => (
-          <TabsBase key={label} label={label} variant="underline" active={active === i} onPress={() => setActive(i)} />
-        ))}
-      </View>
+      <VariantGrid
+        columns={TABS_BASE_VARIANTS}
+        rows={[
+          { label: "Active", render: (variant) => <TabsBase label="Paid" variant={variant} active unread={variant === "button" ? "3" : undefined} /> },
+          { label: "Inactive", render: (variant) => <TabsBase label="Paid" variant={variant} active={false} /> },
+        ]}
+      />
     </View>
   );
 }
@@ -716,4 +836,9 @@ const styles = StyleSheet.create({
   padded: { padding: 12 },
   sheetBox: { width: 320, borderWidth: 1, borderColor: "#e5e5e5" },
   segmentTrack: { flexDirection: "row", backgroundColor: "#f5f4f1", borderRadius: 8, padding: 2, width: 280 },
+  grid: { gap: 12, marginBottom: 8 },
+  gridRow: { flexDirection: "row", alignItems: "center", gap: 16 },
+  gridCell: { flex: 1, alignItems: "flex-start" },
+  gridHeaderLabel: { fontSize: 12, fontWeight: "700", textTransform: "uppercase", color: "#808080" },
+  gridRowLabel: { fontSize: 13, color: "#666" },
 });
