@@ -144,27 +144,31 @@ function ButtonDemo() {
       ]}
       code={`import { Button } from "@statrys/app-ds";\n\n<Button variant="primary" size="md" onPress={handlePress}>\n  Continue\n</Button>`}
     >
-      <DemoPreview>
-        <Button variant={variant} size={size} shape={shape} disabled={disabled}>
-          {label}
-        </Button>
-      </DemoPreview>
+      <View style={styles.demoRow}>
+        <DemoPreview>
+          <Button variant={variant} size={size} shape={shape} disabled={disabled}>
+            {label}
+          </Button>
+        </DemoPreview>
 
-      <View style={styles.controls}>
-        <ControlGroupLabel>Text</ControlGroupLabel>
-        <TextField label="Label" value={label} onChange={setLabel} />
-      </View>
+        <View style={styles.sidebar}>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Text</ControlGroupLabel>
+            <TextField label="Label" value={label} onChange={setLabel} />
+          </View>
 
-      <View style={styles.controls}>
-        <ControlGroupLabel>Layout</ControlGroupLabel>
-        <DemoSegmented label="Variant" options={VARIANTS} value={variant} onChange={setVariant} />
-        <DemoSegmented label="Size" options={SIZES} value={size} onChange={setSize} />
-        <DemoSegmented label="Shape" options={["rec", "rounded"] as const} value={shape} onChange={setShape} />
-      </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Layout</ControlGroupLabel>
+            <DemoSegmented label="Variant" options={VARIANTS} value={variant} onChange={setVariant} />
+            <DemoSegmented label="Size" options={SIZES} value={size} onChange={setSize} />
+            <DemoSegmented label="Shape" options={["rec", "rounded"] as const} value={shape} onChange={setShape} />
+          </View>
 
-      <View style={styles.controls}>
-        <ControlGroupLabel>State</ControlGroupLabel>
-        <Checkbox label="Disabled" selected={disabled} onChange={setDisabled} />
+          <View style={styles.controls}>
+            <ControlGroupLabel>State</ControlGroupLabel>
+            <Checkbox label="Disabled" selected={disabled} onChange={setDisabled} />
+          </View>
+        </View>
       </View>
 
       <View>
@@ -284,13 +288,17 @@ function ToggleDemo() {
         Toggle has no label of its own — tap it directly to flip it, or use the "Selected" control below to see how it
         looks both on and off while disabled.
       </Text>
-      <DemoPreview>
-        <Toggle selected={selected} onChange={disabled ? undefined : setSelected} disabled={disabled} accessibilityLabel="Toggle demo" />
-      </DemoPreview>
-      <View style={styles.controls}>
-        <ControlGroupLabel>State</ControlGroupLabel>
-        <Checkbox label="Selected" selected={selected} onChange={setSelected} />
-        <Checkbox label="Disabled" selected={disabled} onChange={setDisabled} />
+      <View style={styles.demoRow}>
+        <DemoPreview>
+          <Toggle selected={selected} onChange={disabled ? undefined : setSelected} disabled={disabled} accessibilityLabel="Toggle demo" />
+        </DemoPreview>
+        <View style={styles.sidebar}>
+          <View style={styles.controls}>
+            <ControlGroupLabel>State</ControlGroupLabel>
+            <Checkbox label="Selected" selected={selected} onChange={setSelected} />
+            <Checkbox label="Disabled" selected={disabled} onChange={setDisabled} />
+          </View>
+        </View>
       </View>
     </ComponentPage>
   );
@@ -310,16 +318,20 @@ function XCloseDemo() {
       goodToKnow={["Always give it an accessibility label describing what it closes."]}
       code={`import { XClose } from "@statrys/app-ds";\n\n<XClose size="sm" onPress={() => setOpen(false)} accessibilityLabel="Dismiss" />`}
     >
-      <DemoPreview dark={inverse}>
-        <XClose size={size} inverse={inverse} />
-      </DemoPreview>
-      <View style={styles.controls}>
-        <ControlGroupLabel>Layout</ControlGroupLabel>
-        <DemoSegmented label="Size" options={XCLOSE_SIZES} value={size} onChange={setSize} />
-      </View>
-      <View style={styles.controls}>
-        <ControlGroupLabel>State</ControlGroupLabel>
-        <Checkbox label="Inverse (dark surface)" selected={inverse} onChange={setInverse} />
+      <View style={styles.demoRow}>
+        <DemoPreview dark={inverse}>
+          <XClose size={size} inverse={inverse} />
+        </DemoPreview>
+        <View style={styles.sidebar}>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Layout</ControlGroupLabel>
+            <DemoSegmented label="Size" options={XCLOSE_SIZES} value={size} onChange={setSize} />
+          </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>State</ControlGroupLabel>
+            <Checkbox label="Inverse (dark surface)" selected={inverse} onChange={setInverse} />
+          </View>
+        </View>
       </View>
     </ComponentPage>
   );
@@ -446,20 +458,28 @@ function BannerDemo() {
       goodToKnow={["Match the color to how serious the notice is — green for success, red for errors, and so on."]}
       code={`import { Banner } from "@statrys/app-ds";\n\n<Banner\n  color="success"\n  title="Heads up"\n  text="Supporting detail line for this banner."\n  linkLabel="View Details"\n  onDismiss={() => {}}\n/>`}
     >
-      <Banner color={color} title={title} text={text} linkLabel="View Details" onDismiss={showDismiss ? () => {} : undefined} />
+      <View style={styles.demoRow}>
+        <DemoPreview>
+          <View style={{ width: "100%" }}>
+            <Banner color={color} title={title} text={text} linkLabel="View Details" onDismiss={showDismiss ? () => {} : undefined} />
+          </View>
+        </DemoPreview>
 
-      <View style={styles.controls}>
-        <ControlGroupLabel>Text</ControlGroupLabel>
-        <TextField label="Title" value={title} onChange={setTitle} />
-        <TextField label="Text" value={text} onChange={setText} />
-      </View>
-      <View style={styles.controls}>
-        <ControlGroupLabel>Layout</ControlGroupLabel>
-        <DemoSegmented label="Color" options={["info", "success", "warning", "error"] as const} value={color} onChange={setColor} />
-      </View>
-      <View style={styles.controls}>
-        <ControlGroupLabel>Content</ControlGroupLabel>
-        <Checkbox label="Dismiss" selected={showDismiss} onChange={setShowDismiss} />
+        <View style={styles.sidebar}>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Text</ControlGroupLabel>
+            <TextField label="Title" value={title} onChange={setTitle} />
+            <TextField label="Text" value={text} onChange={setText} />
+          </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Layout</ControlGroupLabel>
+            <DemoSegmented label="Color" options={["info", "success", "warning", "error"] as const} value={color} onChange={setColor} />
+          </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Content</ControlGroupLabel>
+            <Checkbox label="Dismiss" selected={showDismiss} onChange={setShowDismiss} />
+          </View>
+        </View>
       </View>
     </ComponentPage>
   );
@@ -509,36 +529,40 @@ function CheckboxDemo() {
       useInstead={[{ label: "Toggle", because: "the choice should take effect immediately, with no submit step." }]}
       code={`import { Checkbox } from "@statrys/app-ds";\n\n<Checkbox label="Remember me" selected={checked} onChange={setChecked} />\n\n<Checkbox\n  label="Remember me"\n  description="Save my login details for next time"\n  selected={checked}\n  onChange={setChecked}\n/>`}
     >
-      <DemoPreview>
-        <Checkbox
-          label={label}
-          description={showDescription ? description : undefined}
-          size={size}
-          selected={selected}
-          indeterminate={indeterminate}
-          disabled={disabled}
-          onChange={setSelected}
-        />
-      </DemoPreview>
+      <View style={styles.demoRow}>
+        <DemoPreview>
+          <Checkbox
+            label={label}
+            description={showDescription ? description : undefined}
+            size={size}
+            selected={selected}
+            indeterminate={indeterminate}
+            disabled={disabled}
+            onChange={setSelected}
+          />
+        </DemoPreview>
 
-      <View style={styles.controls}>
-        <ControlGroupLabel>Text</ControlGroupLabel>
-        <TextField label="Label" value={label} onChange={setLabel} />
-        {showDescription && <TextField label="Description" value={description} onChange={setDescription} />}
-      </View>
-      <View style={styles.controls}>
-        <ControlGroupLabel>Layout</ControlGroupLabel>
-        <DemoSegmented label="Size" options={CHECKBOX_SIZES} value={size} onChange={setSize} />
-      </View>
-      <View style={styles.controls}>
-        <ControlGroupLabel>Content</ControlGroupLabel>
-        <Checkbox label="Description" selected={showDescription} onChange={setShowDescription} />
-      </View>
-      <View style={styles.controls}>
-        <ControlGroupLabel>State</ControlGroupLabel>
-        <Checkbox label="Selected" selected={selected} onChange={setSelected} />
-        <Checkbox label="Indeterminate" selected={indeterminate} onChange={setIndeterminate} />
-        <Checkbox label="Disabled" selected={disabled} onChange={setDisabled} />
+        <View style={styles.sidebar}>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Text</ControlGroupLabel>
+            <TextField label="Label" value={label} onChange={setLabel} />
+            {showDescription && <TextField label="Description" value={description} onChange={setDescription} />}
+          </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Layout</ControlGroupLabel>
+            <DemoSegmented label="Size" options={CHECKBOX_SIZES} value={size} onChange={setSize} />
+          </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Content</ControlGroupLabel>
+            <Checkbox label="Description" selected={showDescription} onChange={setShowDescription} />
+          </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>State</ControlGroupLabel>
+            <Checkbox label="Selected" selected={selected} onChange={setSelected} />
+            <Checkbox label="Indeterminate" selected={indeterminate} onChange={setIndeterminate} />
+            <Checkbox label="Disabled" selected={disabled} onChange={setDisabled} />
+          </View>
+        </View>
       </View>
     </ComponentPage>
   );
@@ -655,26 +679,30 @@ function TooltipDemo() {
       goodToKnow={["Never put information someone needs to finish a task inside a tooltip — it's easy to miss."]}
       code={`import { Tooltip } from "@statrys/app-ds";\n\n<Tooltip title="This is a tooltip" arrow="bottom" />\n\n<Tooltip\n  title="This is a tooltip"\n  description="A second, longer supporting line of text."\n  arrow="top"\n  inverse\n/>`}
     >
-      <DemoPreview>
-        <Tooltip title={title} description={showDescription ? description : undefined} arrow={arrow} inverse={inverse} />
-      </DemoPreview>
+      <View style={styles.demoRow}>
+        <DemoPreview>
+          <Tooltip title={title} description={showDescription ? description : undefined} arrow={arrow} inverse={inverse} />
+        </DemoPreview>
 
-      <View style={styles.controls}>
-        <ControlGroupLabel>Text</ControlGroupLabel>
-        <TextField label="Title" value={title} onChange={setTitle} />
-        {showDescription && <TextField label="Description" value={description} onChange={setDescription} />}
-      </View>
-      <View style={styles.controls}>
-        <ControlGroupLabel>Layout</ControlGroupLabel>
-        <DemoSegmented label="Arrow" options={TOOLTIP_ARROWS} value={arrow} onChange={setArrow} />
-      </View>
-      <View style={styles.controls}>
-        <ControlGroupLabel>Content</ControlGroupLabel>
-        <Checkbox label="Description" selected={showDescription} onChange={setShowDescription} />
-      </View>
-      <View style={styles.controls}>
-        <ControlGroupLabel>State</ControlGroupLabel>
-        <Checkbox label="Inverse (dark bubble)" selected={inverse} onChange={setInverse} />
+        <View style={styles.sidebar}>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Text</ControlGroupLabel>
+            <TextField label="Title" value={title} onChange={setTitle} />
+            {showDescription && <TextField label="Description" value={description} onChange={setDescription} />}
+          </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Layout</ControlGroupLabel>
+            <DemoSegmented label="Arrow" options={TOOLTIP_ARROWS} value={arrow} onChange={setArrow} />
+          </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Content</ControlGroupLabel>
+            <Checkbox label="Description" selected={showDescription} onChange={setShowDescription} />
+          </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>State</ControlGroupLabel>
+            <Checkbox label="Inverse (dark bubble)" selected={inverse} onChange={setInverse} />
+          </View>
+        </View>
       </View>
     </ComponentPage>
   );
@@ -702,24 +730,28 @@ function TextFieldDemo() {
       goodToKnow={["Always pair a field with a caption when it can be wrong — don't rely on the red border alone."]}
       code={`import { TextField } from "@statrys/app-ds";\n\n<TextField label="Email" value={email} onChange={setEmail} mandatory />`}
     >
-      <DemoPreview>
-        <TextField label={label} disabled={disabled} error={error} mandatory={mandatory} caption={showCaption ? caption : undefined} />
-      </DemoPreview>
+      <View style={styles.demoRow}>
+        <DemoPreview>
+          <TextField label={label} disabled={disabled} error={error} mandatory={mandatory} caption={showCaption ? caption : undefined} />
+        </DemoPreview>
 
-      <View style={styles.controls}>
-        <ControlGroupLabel>Text</ControlGroupLabel>
-        <TextField label="Label" value={label} onChange={setLabel} />
-        {showCaption && <TextField label="Caption" value={caption} onChange={setCaption} />}
-      </View>
-      <View style={styles.controls}>
-        <ControlGroupLabel>Content</ControlGroupLabel>
-        <Checkbox label="Caption" selected={showCaption} onChange={setShowCaption} />
-      </View>
-      <View style={styles.controls}>
-        <ControlGroupLabel>State</ControlGroupLabel>
-        <Checkbox label="Mandatory" selected={mandatory} onChange={setMandatory} />
-        <Checkbox label="Error" selected={error} onChange={setError} />
-        <Checkbox label="Disabled" selected={disabled} onChange={setDisabled} />
+        <View style={styles.sidebar}>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Text</ControlGroupLabel>
+            <TextField label="Label" value={label} onChange={setLabel} />
+            {showCaption && <TextField label="Caption" value={caption} onChange={setCaption} />}
+          </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Content</ControlGroupLabel>
+            <Checkbox label="Caption" selected={showCaption} onChange={setShowCaption} />
+          </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>State</ControlGroupLabel>
+            <Checkbox label="Mandatory" selected={mandatory} onChange={setMandatory} />
+            <Checkbox label="Error" selected={error} onChange={setError} />
+            <Checkbox label="Disabled" selected={disabled} onChange={setDisabled} />
+          </View>
+        </View>
       </View>
 
       <View>
@@ -981,20 +1013,24 @@ function HorizontalTabsDemo() {
       useInstead={[{ label: "SegmentedControls", because: "the options are more like a single setting (a chart range) than separate content views." }]}
       code={`import { HorizontalTabs } from "@statrys/app-ds";\n\nconst tabs = ["All", "Paid", "Overdue", "Draft"];\n\n<HorizontalTabs tabs={tabs} activeIndex={activeIndex} onChange={setActiveIndex} />`}
     >
-      <DemoPreview>
-        <HorizontalTabs tabs={tabs} activeIndex={active} onChange={setActive} variant={variant} unread={variant === "button" ? [undefined, undefined, "3", undefined] : undefined} />
-      </DemoPreview>
+      <View style={styles.demoRow}>
+        <DemoPreview>
+          <HorizontalTabs tabs={tabs} activeIndex={active} onChange={setActive} variant={variant} unread={variant === "button" ? [undefined, undefined, "3", undefined] : undefined} />
+        </DemoPreview>
 
-      <View style={styles.controls}>
-        <ControlGroupLabel>Text</ControlGroupLabel>
-        <TextField label="Tab 1" value={tab1} onChange={setTab1} />
-        <TextField label="Tab 2" value={tab2} onChange={setTab2} />
-        <TextField label="Tab 3" value={tab3} onChange={setTab3} />
-        <TextField label="Tab 4" value={tab4} onChange={setTab4} />
-      </View>
-      <View style={styles.controls}>
-        <ControlGroupLabel>Layout</ControlGroupLabel>
-        <DemoSegmented label="Variant" options={["button", "underline"] as const} value={variant} onChange={setVariant} />
+        <View style={styles.sidebar}>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Text</ControlGroupLabel>
+            <TextField label="Tab 1" value={tab1} onChange={setTab1} />
+            <TextField label="Tab 2" value={tab2} onChange={setTab2} />
+            <TextField label="Tab 3" value={tab3} onChange={setTab3} />
+            <TextField label="Tab 4" value={tab4} onChange={setTab4} />
+          </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Layout</ControlGroupLabel>
+            <DemoSegmented label="Variant" options={["button", "underline"] as const} value={variant} onChange={setVariant} />
+          </View>
+        </View>
       </View>
     </ComponentPage>
   );
@@ -1060,29 +1096,33 @@ function ToastMessageDemo() {
       goodToKnow={["Keep the title short enough to read at a glance."]}
       code={`import { ToastMessage } from "@statrys/app-ds";\n\n<ToastMessage\n  variant="success"\n  title="Invoice sent"\n  subtitle="Marked as sent"\n  action={{ label: "View Details", onPress: openInvoice }}\n  onClose={() => setShow(false)}\n/>`}
     >
-      <DemoPreview dark>
-        <ToastMessage
-          variant={variant}
-          title={title}
-          subtitle={showSubtitle ? subtitle : undefined}
-          action={showAction ? { label: "View Details", onPress: () => {} } : undefined}
-          onClose={() => {}}
-        />
-      </DemoPreview>
+      <View style={styles.demoRow}>
+        <DemoPreview dark>
+          <ToastMessage
+            variant={variant}
+            title={title}
+            subtitle={showSubtitle ? subtitle : undefined}
+            action={showAction ? { label: "View Details", onPress: () => {} } : undefined}
+            onClose={() => {}}
+          />
+        </DemoPreview>
 
-      <View style={styles.controls}>
-        <ControlGroupLabel>Text</ControlGroupLabel>
-        <TextField label="Title" value={title} onChange={setTitle} />
-        {showSubtitle && <TextField label="Subtitle" value={subtitle} onChange={setSubtitle} />}
-      </View>
-      <View style={styles.controls}>
-        <ControlGroupLabel>Layout</ControlGroupLabel>
-        <DemoSegmented label="Variant" options={TOAST_MESSAGE_VARIANTS} value={variant} onChange={setVariant} />
-      </View>
-      <View style={styles.controls}>
-        <ControlGroupLabel>Content</ControlGroupLabel>
-        <Checkbox label="Subtitle" selected={showSubtitle} onChange={setShowSubtitle} />
-        <Checkbox label="Action link" selected={showAction} onChange={setShowAction} />
+        <View style={styles.sidebar}>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Text</ControlGroupLabel>
+            <TextField label="Title" value={title} onChange={setTitle} />
+            {showSubtitle && <TextField label="Subtitle" value={subtitle} onChange={setSubtitle} />}
+          </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Layout</ControlGroupLabel>
+            <DemoSegmented label="Variant" options={TOAST_MESSAGE_VARIANTS} value={variant} onChange={setVariant} />
+          </View>
+          <View style={styles.controls}>
+            <ControlGroupLabel>Content</ControlGroupLabel>
+            <Checkbox label="Subtitle" selected={showSubtitle} onChange={setShowSubtitle} />
+            <Checkbox label="Action link" selected={showAction} onChange={setShowAction} />
+          </View>
+        </View>
       </View>
     </ComponentPage>
   );
@@ -1215,7 +1255,9 @@ const styles = StyleSheet.create({
   gridCell: { flex: 1, alignItems: "flex-start" },
   gridHeaderLabel: { fontSize: 12, fontWeight: "700", textTransform: "uppercase", color: "#808080" },
   gridRowLabel: { fontSize: 13, color: "#666" },
-  preview: { minHeight: 100, alignItems: "center", justifyContent: "center", backgroundColor: "#f2f2f2", borderRadius: 8, padding: 16 },
+  demoRow: { flexDirection: "row", flexWrap: "wrap", gap: 24, alignItems: "stretch" },
+  sidebar: { minWidth: 220, flexShrink: 0, gap: 16 },
+  preview: { flex: 1, minWidth: 260, minHeight: 160, alignItems: "center", justifyContent: "center", backgroundColor: "#f2f2f2", borderRadius: 8, padding: 16 },
   previewDark: { backgroundColor: "#1b1b1b" },
   controls: { gap: 8 },
   controlGroupLabel: {
