@@ -19,7 +19,10 @@ import {
 } from "@statrys/tokens";
 import { nativeFontFamily } from "../nativeFont";
 
-// Every value here is an existing shared token — no semantic/tabsBase.json.
+// Every value here is an existing shared token — no semantic/tabsBase.json,
+// except badgeOverlay's top/right offset below, which has no matching
+// token (a cosmetic nudge anchoring the badge to the tab's corner), so
+// it's a plain literal.
 export const styles = StyleSheet.create({
   tab: {
     position: "relative", // anchors badgeOverlay for the button-style unread badge

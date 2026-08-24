@@ -29,7 +29,11 @@ import { nativeFontFamily } from "../nativeFont";
 
 // Every value here is an existing shared token — no semantic/fileItemBase.json.
 // 65px min-height, the 24×27 file icon, its tag pill, and the 30×30 trailing
-// button have no matching tokens, so they're plain literals.
+// button have no matching tokens, so they're plain literals. Same for the
+// tag's #ff1607 background and FILE_ICON_STROKE's #C8D2E1 below — per
+// accounting's own ui/FileItemBase (the source of truth), the file-type tag
+// color is "a decorative format-color convention (like an OS file icon),
+// not a semantic state token", so it's intentionally not tokenized.
 export const styles = StyleSheet.create({
   root: {
     position: "relative",
