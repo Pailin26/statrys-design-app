@@ -41,7 +41,7 @@ export function Checkbox({
       <View style={[styles.wrapper, size === "md" ? styles.wrapperMd : styles.wrapperSm]}>
         <View style={[styles.box, size === "md" ? styles.boxMd : styles.boxSm, boxState(selected, disabled, size)]}>
           {selected && (
-            <Icon width={glyphSize} height={glyphSize} color={iconColor(disabled)} strokeWidth={1.5} />
+            <Icon width={glyphSize} height={glyphSize} color={iconColor(disabled)} strokeWidth={2} />
           )}
         </View>
       </View>
