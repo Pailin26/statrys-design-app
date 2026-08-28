@@ -8,7 +8,7 @@
     "button.primary", "button.primaryActive",
     "button.secondary", "button.secondaryActive",
     "button.tertiary", "button.tertiaryActive",
-    "button.disabled", "text.neutralInverse.primary", "text.neutralInverse.disabled"
+    "button.disabled", "button.textTransform", "text.neutralInverse.primary", "text.neutralInverse.disabled"
   ],
   "props": {
     "variant": ["primary", "secondary", "tertiary"],
